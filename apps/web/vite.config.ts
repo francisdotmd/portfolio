@@ -14,7 +14,7 @@ export default defineConfig({
       cache: { cdn: cdnAdapter() },
     }),
     cloudflare({
-      inspectorPort: 9230,
+      inspectorPort: 9231,
       viteEnvironment: {
         name: "rsc",
         childEnvironments: ["ssr"],
