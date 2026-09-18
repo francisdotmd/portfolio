@@ -2,7 +2,7 @@ export const baseKeywords = [
   "Francis Ignacio",
   "Francis",
   "mnemora",
-  "francistries.science",
+  "francisdotmd.page",
   "portfolio",
   "personal website",
   "resume",
