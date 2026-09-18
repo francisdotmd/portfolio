@@ -1,11 +1,11 @@
 {
-  "name": "web",
+  "name": "portfolio-web",
   "version": "0.1.0",
   "type": "module",
   "private": true,
   "packageManager": "bun@1.3.14",
   "scripts": {
-    "dev": "vinext dev --port 33001",
+    "dev": "vinext dev --port 13001",
     "build": "vinext build",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "deploy": "vinext-cloudflare deploy --config dist/server/wrangler.json",
