@@ -25,14 +25,16 @@ export default function RootLayout({
       <body className="overflow-x-hidden font-sans tracking-tight antialiased">
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
-          enableSystem
+          defaultTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <ToastProvider>
             <TooltipProvider delay={0}>
               <QueryProvider>
-                <main className="relative min-h-svh w-full overflow-x-hidden">{children}</main>
+                <main className="bg-background text-foreground relative min-h-svh w-full overflow-x-hidden">
+                  {children}
+                </main>
               </QueryProvider>
             </TooltipProvider>
           </ToastProvider>
