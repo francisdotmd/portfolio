@@ -4,7 +4,7 @@ import { baseKeywords } from "./keywords"
 export { baseKeywords } from "./keywords"
 
 const defaultDescription =
-  "Software Engineer and Technical Lead with 4+ years of experience designing and operating scalable backend systems, distributed architectures, and AI-powered products across startups and academia. Proven track record of owning end-to-end delivery, from architecture and cloud infrastructure to observability and growth, migrating legacy stacks, cutting latency, and enabling data-driven decisions for engineering, product, and business teams."
+  "AI Engineer, Product Engineer, and startup co-founder building reliable AI-powered products, backend systems, and end-to-end software across startups and academia."
 const defaultUrl = "https://francisdotmd.page"
 
 export interface MetadataConfig extends Omit<Metadata, "description" | "keywords"> {
