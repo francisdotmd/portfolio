@@ -55,16 +55,15 @@ const skillGroups = [
   { label: "Frontend", items: "Next.js · React · Astro · Tailwind CSS" },
   { label: "Backend", items: "Node.js · Hono · FastAPI · Gin · PostgreSQL" },
   { label: "Infrastructure", items: "AWS · GCP · Docker · Kubernetes · Cloudflare" },
-  { label: "Tools", items: "GitHub Actions · GitLab CI/CD · Claude Code · Codex · Zed" },
+  { label: "Tools", items: "GitHub Actions · CI/CD · Claude Code · Codex · Zed" },
 ]
 
 const links = [
   { label: "GitHub", href: "https://github.com/francistriesscience" },
-  { label: "GitLab", href: "https://gitlab.com/francistriesscience" },
   { label: "LinkedIn", href: "https://linkedin.com/in/francistriesscience" },
 ]
 
-const labelClassName = "font-mono text-[11px] uppercase tracking-[0.08em] text-muted-foreground"
+const labelClassName = "font-mono text-sm uppercase tracking-[0.08em] text-muted-foreground"
 const linkClassName =
   "text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
 const cellClassName = "border-border p-5 sm:p-7"
@@ -99,25 +98,16 @@ export default function HomePage() {
           </div>
           <div className={`${cellClassName} space-y-6 sm:p-10`}>
             <p className="max-w-2xl text-xl leading-relaxed tracking-[-0.03em] sm:text-2xl">
-              I build the unglamorous systems that other things depend on.
+              I build AI-powered products and the systems that keep them running.
             </p>
             <div className="text-muted-foreground max-w-2xl space-y-4 font-sans text-sm leading-6">
-              <p>
-                I enjoy owning the whole stack, from architecture and infrastructure to the details
-                that make a product feel good to use.
-              </p>
-              <p>
-                Software engineer and technical lead focused on reliable products, backend systems,
-                and AI engineering.
-              </p>
+              <p>AI engineer, product engineer, and startup co-founder.</p>
+              <p>I work across applied AI, product engineering, and reliable backend systems.</p>
             </div>
             <nav
               className="flex flex-wrap gap-x-5 gap-y-2 text-[11px] tracking-[0.08em] uppercase"
               aria-label="Links"
             >
-              <a className={linkClassName} href="https://francisdotmd.page">
-                Website
-              </a>
               <a
                 className={linkClassName}
                 href="https://drive.google.com/file/d/1-gi0nNzPXp_zLeoTXQ8_hSVVpJJkrhAk/view?usp=sharing"
