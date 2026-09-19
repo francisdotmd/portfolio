@@ -86,12 +86,12 @@ export default function HomePage() {
             <p className={labelClassName}>Philippines</p>
           </div>
           <div className={cellClassName}>
-            <a
+            <Link
               className={`${labelClassName} hover:text-foreground`}
               href="mailto:hello@francisdotmd.page"
             >
               hello@francisdotmd.page
-            </a>
+            </Link>
           </div>
         </header>
 
@@ -111,16 +111,16 @@ export default function HomePage() {
               className="flex flex-wrap gap-x-5 gap-y-2 text-[11px] tracking-[0.08em] uppercase"
               aria-label="Links"
             >
-              <a
+              <Link
                 className={linkClassName}
                 href="https://drive.google.com/file/d/1-gi0nNzPXp_zLeoTXQ8_hSVVpJJkrhAk/view?usp=sharing"
                 target="_blank"
                 rel="noreferrer"
               >
                 Résumé
-              </a>
+              </Link>
               {links.map((link) => (
-                <a
+                <Link
                   key={link.label}
                   className={linkClassName}
                   href={link.href}
@@ -128,7 +128,7 @@ export default function HomePage() {
                   rel="noreferrer"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
@@ -217,16 +217,16 @@ export default function HomePage() {
               Let&apos;s build something that has to stay up.
             </h2>
             <div className="flex flex-wrap gap-x-5 gap-y-2 text-[11px] tracking-[0.08em] uppercase">
-              <a className={linkClassName} href="mailto:hello@francisdotmd.page">
+              <Link className={linkClassName} href="mailto:hello@francisdotmd.page">
                 Email me
                 <IconArrowUpRight
                   aria-hidden="true"
                   className="ml-1 inline-block size-3.5 align-[-0.15em]"
                 />
-              </a>
-              <a className={linkClassName} href="https://francisdotmd.page">
+              </Link>
+              <Link className={linkClassName} href="https://francisdotmd.page">
                 francisdotmd.page
-              </a>
+              </Link>
             </div>
             <p className="text-muted-foreground text-[11px] tracking-[0.08em] uppercase">
               © 2026 Francis Ignacio
