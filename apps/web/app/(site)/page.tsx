@@ -1,3 +1,5 @@
+import { IconArrowUpRight } from "@tabler/icons-react"
+
 const work = [
   {
     role: "Product Engineer",
@@ -85,9 +87,9 @@ export default function HomePage() {
           <div className={cellClassName}>
             <a
               className={`${labelClassName} hover:text-foreground`}
-              href="mailto:hello@francidotmd.page"
+              href="mailto:hello@francisdotmd.page"
             >
-              hello@francidotmd.page
+              hello@francisdotmd.page
             </a>
           </div>
         </header>
@@ -177,7 +179,11 @@ export default function HomePage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Visit project ↗
+                  Visit project
+                  <IconArrowUpRight
+                    aria-hidden="true"
+                    className="ml-1 inline-block size-3.5 align-[-0.15em]"
+                  />
                 </a>
               </article>
             ))}
@@ -210,8 +216,12 @@ export default function HomePage() {
               Let&apos;s build something that has to stay up.
             </h2>
             <div className="flex flex-wrap gap-x-5 gap-y-2 text-[11px] tracking-[0.08em] uppercase">
-              <a className={linkClassName} href="mailto:hello@francidotmd.page">
-                Email me ↗
+              <a className={linkClassName} href="mailto:hello@francisdotmd.page">
+                Email me
+                <IconArrowUpRight
+                  aria-hidden="true"
+                  className="ml-1 inline-block size-3.5 align-[-0.15em]"
+                />
               </a>
               <a className={linkClassName} href="https://francisdotmd.page">
                 francisdotmd.page
