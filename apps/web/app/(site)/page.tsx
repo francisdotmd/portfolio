@@ -51,11 +51,11 @@ const projects = [
 ]
 
 const skillGroups = [
-  { label: "languages", items: "Go · TypeScript · JavaScript · Python" },
-  { label: "frontend", items: "Next.js · React · Astro · Tailwind CSS" },
-  { label: "backend", items: "Node.js · Hono · FastAPI · Gin · PostgreSQL" },
-  { label: "infrastructure", items: "AWS · GCP · Docker · Kubernetes · Cloudflare" },
-  { label: "tools", items: "GitHub Actions · GitLab CI/CD · Claude Code · Codex · Zed" },
+  { label: "Languages", items: "Go · TypeScript · JavaScript · Python" },
+  { label: "Frontend", items: "Next.js · React · Astro · Tailwind CSS" },
+  { label: "Backend", items: "Node.js · Hono · FastAPI · Gin · PostgreSQL" },
+  { label: "Infrastructure", items: "AWS · GCP · Docker · Kubernetes · Cloudflare" },
+  { label: "Tools", items: "GitHub Actions · GitLab CI/CD · Claude Code · Codex · Zed" },
 ]
 
 const links = [
@@ -64,84 +64,99 @@ const links = [
   { label: "LinkedIn", href: "https://linkedin.com/in/francistriesscience" },
 ]
 
+const labelClassName = "font-mono text-[11px] uppercase tracking-[0.08em] text-[#777772]"
 const linkClassName =
-  "text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
-
-const markerClassName = "font-mono text-muted-foreground"
+  "text-[#252522] underline decoration-[#c8c8c1] underline-offset-4 transition-colors hover:decoration-[#252522] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#252522]"
+const cellClassName = "border-[#deded8] p-5 sm:p-7"
 
 export default function HomePage() {
   return (
-    <main className="mx-auto max-w-3xl px-5 py-8 sm:px-8 sm:py-12">
-      <div className="border-border text-muted-foreground flex items-center justify-between border-b pb-3 font-mono text-xs">
-        <a className="hover:text-foreground" href="https://francisdotmd.page">
-          francisdotmd.page
-        </a>
-        <span>README.md</span>
-      </div>
-
-      <article className="space-y-14 py-14 sm:py-20">
-        <header className="space-y-7">
-          <div className="space-y-3">
-            <p className={`${markerClassName} text-sm`}># hello, world</p>
-            <h1 className="text-foreground text-4xl font-medium tracking-[-0.05em] sm:text-6xl">
-              Francis Ignacio
-            </h1>
-            <p className="text-muted-foreground text-lg">Software Engineer and Technical Lead.</p>
+    <div className="min-h-svh bg-[#eeeeeb] px-3 py-3 font-mono text-[#252522] sm:px-6 sm:py-6">
+      <div className="mx-auto max-w-[1200px] border border-[#d8d8d2] bg-[#fafaf8] shadow-[0_16px_50px_rgba(35,35,30,0.05)]">
+        <header className="grid border-b border-[#deded8] sm:grid-cols-2">
+          <div className={`${cellClassName} border-b sm:border-r`}>
+            <p className={labelClassName}>Francis Ignacio</p>
           </div>
-
-          <div className="text-muted-foreground max-w-2xl space-y-4 text-[1.05rem] leading-8">
-            <p>
-              I build the unglamorous systems that other things depend on. I enjoy owning the whole
-              stack, from architecture and infrastructure to the details that make a product feel
-              good to use.
-            </p>
+          <div className={`${cellClassName} border-b`}>
+            <p className={labelClassName}>AI &amp; Product Engineering</p>
           </div>
-
-          <nav
-            className="flex flex-wrap gap-x-5 gap-y-2 font-mono text-sm"
-            aria-label="Primary links"
-          >
+          <div className={`${cellClassName} border-b sm:border-r sm:border-b-0`}>
+            <p className={labelClassName}>Philippines</p>
+          </div>
+          <div className={cellClassName}>
             <a
-              className={linkClassName}
-              href="https://drive.google.com/file/d/1-gi0nNzPXp_zLeoTXQ8_hSVVpJJkrhAk/view?usp=sharing"
-              target="_blank"
-              rel="noreferrer"
+              className={`${labelClassName} hover:text-[#252522]`}
+              href="mailto:hello@francidotmd.page"
             >
-              [résumé]
+              hello@francidotmd.page
             </a>
-            <a className={linkClassName} href="mailto:hello@francistries.science">
-              [email]
-            </a>
-            {links.map((link) => (
+          </div>
+        </header>
+
+        <section className="grid border-b border-[#deded8] md:grid-cols-[minmax(12rem,0.8fr)_2fr]">
+          <div className={`${cellClassName} border-b md:border-r md:border-b-0`}>
+            <p className={labelClassName}>00 / Profile</p>
+          </div>
+          <div className={`${cellClassName} space-y-6 sm:p-10`}>
+            <p className="max-w-2xl text-xl leading-relaxed tracking-[-0.03em] sm:text-2xl">
+              I build the unglamorous systems that other things depend on.
+            </p>
+            <div className="max-w-2xl space-y-4 font-sans text-sm leading-6 text-[#696963]">
+              <p>
+                I enjoy owning the whole stack, from architecture and infrastructure to the details
+                that make a product feel good to use.
+              </p>
+              <p>
+                Software engineer and technical lead focused on reliable products, backend systems,
+                and AI engineering.
+              </p>
+            </div>
+            <nav
+              className="flex flex-wrap gap-x-5 gap-y-2 text-[11px] tracking-[0.08em] uppercase"
+              aria-label="Links"
+            >
+              <a className={linkClassName} href="https://francisdotmd.page">
+                Website
+              </a>
               <a
-                key={link.label}
                 className={linkClassName}
-                href={link.href}
+                href="https://drive.google.com/file/d/1-gi0nNzPXp_zLeoTXQ8_hSVVpJJkrhAk/view?usp=sharing"
                 target="_blank"
                 rel="noreferrer"
               >
-                [{link.label}]
+                Résumé
               </a>
-            ))}
-          </nav>
-        </header>
+              {links.map((link) => (
+                <a
+                  key={link.label}
+                  className={linkClassName}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+        </section>
 
-        <section className="space-y-7" aria-labelledby="work-heading">
-          <h2 id="work-heading" className="text-foreground text-xl font-medium">
-            <span className={markerClassName}>##</span> Work
-          </h2>
-          <div className="border-border space-y-8 border-l pl-5 sm:pl-6">
+        <section className="grid border-b border-[#deded8] md:grid-cols-[minmax(12rem,0.8fr)_2fr]">
+          <div className={`${cellClassName} border-b md:border-r md:border-b-0`}>
+            <p className={labelClassName}>01 / Work</p>
+          </div>
+          <div className="divide-y divide-[#deded8]">
             {work.map((item) => (
-              <article key={`${item.company}-${item.role}`} className="space-y-2">
-                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
-                  <h3 className="text-foreground font-medium">
-                    {item.role} <span className="text-muted-foreground">— {item.company}</span>
-                  </h3>
-                  <time className="text-muted-foreground shrink-0 font-mono text-xs">
+              <article key={`${item.company}-${item.role}`} className="space-y-3 p-5 sm:p-7">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+                  <h2 className="font-sans text-base font-medium tracking-tight">
+                    {item.role} <span className="text-[#777772]">— {item.company}</span>
+                  </h2>
+                  <time className="shrink-0 text-[11px] tracking-[0.06em] text-[#777772] uppercase">
                     {item.dates}
                   </time>
                 </div>
-                <p className="text-muted-foreground max-w-2xl text-sm leading-6">
+                <p className="max-w-2xl font-sans text-sm leading-6 text-[#696963]">
                   {item.description}
                 </p>
               </article>
@@ -149,52 +164,73 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="space-y-7" aria-labelledby="projects-heading">
-          <h2 id="projects-heading" className="text-foreground text-xl font-medium">
-            <span className={markerClassName}>##</span> Projects
-          </h2>
-          <ul className="text-muted-foreground space-y-4 text-sm leading-6">
-            {projects.map((project) => (
-              <li key={project.name} className="pl-5">
-                <span className={`${markerClassName} mr-2 -ml-5`} aria-hidden="true">
-                  -
-                </span>
-                <a className={linkClassName} href={project.href} target="_blank" rel="noreferrer">
-                  {project.name}
-                </a>{" "}
-                — {project.description}
-              </li>
+        <section className="grid border-b border-[#deded8] md:grid-cols-[minmax(12rem,0.8fr)_2fr]">
+          <div className={`${cellClassName} border-b md:border-r md:border-b-0`}>
+            <p className={labelClassName}>02 / Projects</p>
+          </div>
+          <div className="grid sm:grid-cols-2">
+            {projects.map((project, index) => (
+              <article
+                key={project.name}
+                className={`space-y-4 p-5 sm:p-7 ${index < 2 ? "border-b" : "border-b sm:border-b-0"} ${index % 2 === 0 ? "sm:border-r" : ""} border-[#deded8]`}
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <h2 className="font-sans text-base font-medium tracking-tight">{project.name}</h2>
+                  <span className={labelClassName}>0{index + 1}</span>
+                </div>
+                <p className="font-sans text-sm leading-6 text-[#696963]">{project.description}</p>
+                <a
+                  className={`${linkClassName} text-[11px] tracking-[0.08em] uppercase`}
+                  href={project.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit project ↗
+                </a>
+              </article>
             ))}
-          </ul>
+          </div>
         </section>
 
-        <section className="space-y-7" aria-labelledby="skills-heading">
-          <h2 id="skills-heading" className="text-foreground text-xl font-medium">
-            <span className={markerClassName}>##</span> Skills
-          </h2>
-          <dl className="space-y-3 font-mono text-sm">
-            {skillGroups.map((group) => (
-              <div key={group.label} className="grid gap-1 sm:grid-cols-[9rem_1fr] sm:gap-4">
-                <dt className="text-muted-foreground">{group.label}:</dt>
-                <dd className="text-foreground">{group.items}</dd>
+        <section className="grid border-b border-[#deded8] md:grid-cols-[minmax(12rem,0.8fr)_2fr]">
+          <div className={`${cellClassName} border-b md:border-r md:border-b-0`}>
+            <p className={labelClassName}>03 / Toolkit</p>
+          </div>
+          <div className="grid sm:grid-cols-2">
+            {skillGroups.map((group, index) => (
+              <div
+                key={group.label}
+                className={`space-y-3 border-[#deded8] p-5 sm:p-7 ${index < 4 ? "border-b" : ""} ${index % 2 === 0 ? "sm:border-r" : ""}`}
+              >
+                <p className={labelClassName}>{group.label}</p>
+                <p className="font-sans text-sm leading-6 text-[#696963]">{group.items}</p>
               </div>
             ))}
-          </dl>
+          </div>
         </section>
 
-        <footer className="border-border space-y-5 border-t pt-7">
-          <p className="text-muted-foreground font-mono text-sm">---</p>
-          <h2 className="text-foreground max-w-xl text-3xl leading-tight font-medium tracking-[-0.05em] sm:text-4xl">
-            Let&apos;s build something that has to stay up.
-          </h2>
-          <p className="text-muted-foreground text-sm">
-            <a className={linkClassName} href="https://francisdotmd.page">
-              francisdotmd.page
-            </a>{" "}
-            · Manila, PH
-          </p>
+        <footer className="grid md:grid-cols-[minmax(12rem,0.8fr)_2fr]">
+          <div className={`${cellClassName} border-b md:border-r md:border-b-0`}>
+            <p className={labelClassName}>04 / Contact</p>
+          </div>
+          <div className={`${cellClassName} space-y-6 sm:p-10`}>
+            <h2 className="max-w-2xl font-sans text-3xl leading-tight font-medium tracking-[-0.05em] sm:text-5xl">
+              Let&apos;s build something that has to stay up.
+            </h2>
+            <div className="flex flex-wrap gap-x-5 gap-y-2 text-[11px] tracking-[0.08em] uppercase">
+              <a className={linkClassName} href="mailto:hello@francidotmd.page">
+                Email me ↗
+              </a>
+              <a className={linkClassName} href="https://francisdotmd.page">
+                francisdotmd.page
+              </a>
+            </div>
+            <p className="text-[11px] tracking-[0.08em] text-[#777772] uppercase">
+              © 2026 Francis Ignacio
+            </p>
+          </div>
         </footer>
-      </article>
-    </main>
+      </div>
+    </div>
   )
 }
