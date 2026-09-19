@@ -71,8 +71,8 @@ const cellClassName = "border-[#deded8] p-5 sm:p-7"
 
 export default function HomePage() {
   return (
-    <div className="min-h-svh bg-[#eeeeeb] px-3 py-3 font-mono text-[#252522] sm:px-6 sm:py-6">
-      <div className="mx-auto max-w-[1200px] border border-[#d8d8d2] bg-[#fafaf8] shadow-[0_16px_50px_rgba(35,35,30,0.05)]">
+    <div className="min-h-svh bg-[#fafaf8] font-mono text-[#252522]">
+      <div className="mx-auto max-w-[1200px] border-x border-[#d8d8d2] bg-[#fafaf8]">
         <header className="grid border-b border-[#deded8] sm:grid-cols-2">
           <div className={`${cellClassName} border-b sm:border-r`}>
             <p className={labelClassName}>Francis Ignacio</p>
