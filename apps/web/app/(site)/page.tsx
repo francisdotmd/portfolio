@@ -69,7 +69,7 @@ const links = [
 const labelClassName = "font-mono text-sm uppercase tracking-[0.08em] text-muted-foreground"
 const linkClassName =
   "text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
-const cellClassName = "border-border p-2"
+const cellClassName = "border-border p-4"
 
 export default function HomePage() {
   return (
@@ -140,7 +140,7 @@ export default function HomePage() {
           </div>
           <div className="divide-border divide-y">
             {work.map((item) => (
-              <article key={`${item.company}-${item.role}`} className="space-y-3 p-2">
+              <article key={`${item.company}-${item.role}`} className="space-y-3 p-4">
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
                   <h2 className="font-sans text-base font-medium tracking-tight">
                     {item.role} <span className="text-muted-foreground">— {item.company}</span>
@@ -165,7 +165,7 @@ export default function HomePage() {
             {projects.map((project, index) => (
               <article
                 key={project.name}
-                className={`border-border space-y-4 p-2 ${index < 2 ? "border-b" : "border-b sm:border-b-0"} ${index % 2 === 0 ? "sm:border-r" : ""}`}
+                className={`border-border space-y-4 p-4 ${index < 2 ? "border-b" : "border-b sm:border-b-0"} ${index % 2 === 0 ? "sm:border-r" : ""}`}
               >
                 <div className="flex items-start justify-between gap-4">
                   <h2 className="font-sans text-base font-medium tracking-tight">{project.name}</h2>
@@ -196,7 +196,7 @@ export default function HomePage() {
             {skillGroups.map((group, index) => (
               <div
                 key={group.label}
-                className={`border-border space-y-3 p-2 ${index < 4 ? "border-b" : ""} ${index % 2 === 0 ? "sm:border-r" : ""}`}
+                className={`border-border space-y-3 p-4 ${index < 4 ? "border-b" : ""} ${index % 2 === 0 ? "sm:border-r" : ""}`}
               >
                 <p className={labelClassName}>{group.label}</p>
                 <p className="text-muted-foreground font-sans text-sm leading-6">{group.items}</p>
