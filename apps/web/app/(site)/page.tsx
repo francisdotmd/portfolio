@@ -95,12 +95,6 @@ export default function HomePage() {
               stack, from architecture and infrastructure to the details that make a product feel
               good to use.
             </p>
-            <p>
-              My work is mostly in <code className="text-foreground">Go</code>,{" "}
-              <code className="text-foreground">TypeScript</code>, and{" "}
-              <code className="text-foreground">Python</code>, with a growing focus on AI
-              engineering and reliable product systems.
-            </p>
           </div>
 
           <nav
