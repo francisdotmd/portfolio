@@ -64,16 +64,16 @@ const links = [
   { label: "LinkedIn", href: "https://linkedin.com/in/francistriesscience" },
 ]
 
-const labelClassName = "font-mono text-[11px] uppercase tracking-[0.08em] text-[#777772]"
+const labelClassName = "font-mono text-[11px] uppercase tracking-[0.08em] text-muted-foreground"
 const linkClassName =
-  "text-[#252522] underline decoration-[#c8c8c1] underline-offset-4 transition-colors hover:decoration-[#252522] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#252522]"
-const cellClassName = "border-[#deded8] p-5 sm:p-7"
+  "text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+const cellClassName = "border-border p-5 sm:p-7"
 
 export default function HomePage() {
   return (
-    <div className="min-h-svh bg-[#fafaf8] font-mono text-[#252522]">
-      <div className="mx-auto max-w-[1200px] border-x border-[#d8d8d2] bg-[#fafaf8]">
-        <header className="grid border-b border-[#deded8] sm:grid-cols-2">
+    <div className="bg-background text-foreground min-h-svh font-mono">
+      <div className="border-border bg-background mx-auto max-w-[1200px] border-x">
+        <header className="border-border grid border-b sm:grid-cols-2">
           <div className={`${cellClassName} border-b sm:border-r`}>
             <p className={labelClassName}>Francis Ignacio</p>
           </div>
@@ -85,7 +85,7 @@ export default function HomePage() {
           </div>
           <div className={cellClassName}>
             <a
-              className={`${labelClassName} hover:text-[#252522]`}
+              className={`${labelClassName} hover:text-foreground`}
               href="mailto:hello@francidotmd.page"
             >
               hello@francidotmd.page
@@ -93,7 +93,7 @@ export default function HomePage() {
           </div>
         </header>
 
-        <section className="grid border-b border-[#deded8] md:grid-cols-[minmax(12rem,0.8fr)_2fr]">
+        <section className="border-border grid border-b md:grid-cols-[minmax(12rem,0.8fr)_2fr]">
           <div className={`${cellClassName} border-b md:border-r md:border-b-0`}>
             <p className={labelClassName}>00 / Profile</p>
           </div>
@@ -101,7 +101,7 @@ export default function HomePage() {
             <p className="max-w-2xl text-xl leading-relaxed tracking-[-0.03em] sm:text-2xl">
               I build the unglamorous systems that other things depend on.
             </p>
-            <div className="max-w-2xl space-y-4 font-sans text-sm leading-6 text-[#696963]">
+            <div className="text-muted-foreground max-w-2xl space-y-4 font-sans text-sm leading-6">
               <p>
                 I enjoy owning the whole stack, from architecture and infrastructure to the details
                 that make a product feel good to use.
@@ -141,22 +141,22 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="grid border-b border-[#deded8] md:grid-cols-[minmax(12rem,0.8fr)_2fr]">
+        <section className="border-border grid border-b md:grid-cols-[minmax(12rem,0.8fr)_2fr]">
           <div className={`${cellClassName} border-b md:border-r md:border-b-0`}>
             <p className={labelClassName}>01 / Work</p>
           </div>
-          <div className="divide-y divide-[#deded8]">
+          <div className="divide-border divide-y">
             {work.map((item) => (
               <article key={`${item.company}-${item.role}`} className="space-y-3 p-5 sm:p-7">
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
                   <h2 className="font-sans text-base font-medium tracking-tight">
-                    {item.role} <span className="text-[#777772]">— {item.company}</span>
+                    {item.role} <span className="text-muted-foreground">— {item.company}</span>
                   </h2>
-                  <time className="shrink-0 text-[11px] tracking-[0.06em] text-[#777772] uppercase">
+                  <time className="text-muted-foreground shrink-0 text-[11px] tracking-[0.06em] uppercase">
                     {item.dates}
                   </time>
                 </div>
-                <p className="max-w-2xl font-sans text-sm leading-6 text-[#696963]">
+                <p className="text-muted-foreground max-w-2xl font-sans text-sm leading-6">
                   {item.description}
                 </p>
               </article>
@@ -164,7 +164,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="grid border-b border-[#deded8] md:grid-cols-[minmax(12rem,0.8fr)_2fr]">
+        <section className="border-border grid border-b md:grid-cols-[minmax(12rem,0.8fr)_2fr]">
           <div className={`${cellClassName} border-b md:border-r md:border-b-0`}>
             <p className={labelClassName}>02 / Projects</p>
           </div>
@@ -172,13 +172,15 @@ export default function HomePage() {
             {projects.map((project, index) => (
               <article
                 key={project.name}
-                className={`space-y-4 p-5 sm:p-7 ${index < 2 ? "border-b" : "border-b sm:border-b-0"} ${index % 2 === 0 ? "sm:border-r" : ""} border-[#deded8]`}
+                className={`border-border space-y-4 p-5 sm:p-7 ${index < 2 ? "border-b" : "border-b sm:border-b-0"} ${index % 2 === 0 ? "sm:border-r" : ""}`}
               >
                 <div className="flex items-start justify-between gap-4">
                   <h2 className="font-sans text-base font-medium tracking-tight">{project.name}</h2>
                   <span className={labelClassName}>0{index + 1}</span>
                 </div>
-                <p className="font-sans text-sm leading-6 text-[#696963]">{project.description}</p>
+                <p className="text-muted-foreground font-sans text-sm leading-6">
+                  {project.description}
+                </p>
                 <a
                   className={`${linkClassName} text-[11px] tracking-[0.08em] uppercase`}
                   href={project.href}
@@ -192,7 +194,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="grid border-b border-[#deded8] md:grid-cols-[minmax(12rem,0.8fr)_2fr]">
+        <section className="border-border grid border-b md:grid-cols-[minmax(12rem,0.8fr)_2fr]">
           <div className={`${cellClassName} border-b md:border-r md:border-b-0`}>
             <p className={labelClassName}>03 / Toolkit</p>
           </div>
@@ -200,10 +202,10 @@ export default function HomePage() {
             {skillGroups.map((group, index) => (
               <div
                 key={group.label}
-                className={`space-y-3 border-[#deded8] p-5 sm:p-7 ${index < 4 ? "border-b" : ""} ${index % 2 === 0 ? "sm:border-r" : ""}`}
+                className={`border-border space-y-3 p-5 sm:p-7 ${index < 4 ? "border-b" : ""} ${index % 2 === 0 ? "sm:border-r" : ""}`}
               >
                 <p className={labelClassName}>{group.label}</p>
-                <p className="font-sans text-sm leading-6 text-[#696963]">{group.items}</p>
+                <p className="text-muted-foreground font-sans text-sm leading-6">{group.items}</p>
               </div>
             ))}
           </div>
@@ -225,7 +227,7 @@ export default function HomePage() {
                 francisdotmd.page
               </a>
             </div>
-            <p className="text-[11px] tracking-[0.08em] text-[#777772] uppercase">
+            <p className="text-muted-foreground text-[11px] tracking-[0.08em] uppercase">
               © 2026 Francis Ignacio
             </p>
           </div>
