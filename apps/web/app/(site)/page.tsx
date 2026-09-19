@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { IconArrowUpRight } from "@tabler/icons-react"
 
 const work = [
@@ -173,7 +174,7 @@ export default function HomePage() {
                 <p className="text-muted-foreground font-sans text-sm leading-6">
                   {project.description}
                 </p>
-                <a
+                <Link
                   className={`${linkClassName} text-[11px] tracking-[0.08em] uppercase`}
                   href={project.href}
                   target="_blank"
@@ -184,7 +185,7 @@ export default function HomePage() {
                     aria-hidden="true"
                     className="ml-1 inline-block size-3.5 align-[-0.15em]"
                   />
-                </a>
+                </Link>
               </article>
             ))}
           </div>
