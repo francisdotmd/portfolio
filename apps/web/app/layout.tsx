@@ -10,10 +10,10 @@ export const metadata: Metadata = createMetadata({
   name: "Francis Ignacio",
 })
 
+import { QueryProvider } from "@/providers/query-provider"
 import { ThemeProvider } from "@packages/ui-w/providers/theme-provider"
 import { ToastProvider } from "@packages/ui-w/providers/toast-provider"
 import { TooltipProvider } from "@packages/ui-w/providers/tooltip-provider"
-import { QueryProvider } from "@/providers/query-provider"
 
 export default function RootLayout({
   children,
@@ -32,7 +32,7 @@ export default function RootLayout({
           <ToastProvider>
             <TooltipProvider delay={0}>
               <QueryProvider>
-                <main className="bg-background text-foreground relative min-h-svh w-full overflow-x-hidden">
+                <main className="bg-background text-foreground relative mx-auto min-h-svh w-full max-w-6xl overflow-x-hidden">
                   {children}
                 </main>
               </QueryProvider>
