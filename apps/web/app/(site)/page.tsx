@@ -1,6 +1,6 @@
 "use client"
 
-import { TabsVariant } from "@/components/pages/home/_tabs/tabs-variant"
+import { HomeTabs } from "@/components/pages/home/_tabs/home-tabs"
 import { Footer } from "@/components/pages/home/_section/footer"
 import { Information } from "@/components/pages/home/_section/information"
 import { Introduction } from "@/components/pages/home/_section/introduction"
@@ -32,9 +32,9 @@ export default function HomePage() {
             className="border-border bg-background/95 sticky top-0 z-10 border-b p-2 backdrop-blur"
             aria-label="Portfolio views"
           >
-            <TabsVariant
+            <HomeTabs
               value={activeTab}
-              onValueChange={(value) =>
+              onValueChangeAction={(value) =>
                 setQueryParams({ tab: value === "experience" ? "experience" : "work" })
               }
             />
