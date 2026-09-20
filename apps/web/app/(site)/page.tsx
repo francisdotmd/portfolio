@@ -42,7 +42,7 @@ const projects = [
   {
     name: "Safegate",
     href: "https://usesafegate.com",
-    image: "https://i.imgur.com/K05LjiN.gif",
+    image: "https://i.imgur.com/HHR3x49.png",
     type: "Product",
     dates: "2026 — Present",
   },
