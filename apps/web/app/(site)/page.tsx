@@ -2,19 +2,14 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { products } from "@/data/products"
+import { socials } from "@/data/socials"
+import { works } from "@/data/works"
 import { Avatar } from "@packages/ui-w/shared/avatar/avatar"
 import { AvatarFallback } from "@packages/ui-w/shared/avatar/avatar-fallback"
 import { AvatarImage } from "@packages/ui-w/shared/avatar/avatar-image"
-import {
-  IconArrowUpRight,
-  IconBrandGithub,
-  IconBrandLinkedin,
-  IconDownload,
-  IconMail,
-} from "@tabler/icons-react"
+import { IconArrowUpRight, IconDownload } from "@tabler/icons-react"
 
-const work = [
+const experience = [
   {
     role: "Product Engineer",
     company: "Mnemora",
@@ -44,24 +39,6 @@ const work = [
   },
 ]
 
-const links = [
-  {
-    label: "Email",
-    href: "mailto:hello@francisdotmd.page",
-    icon: IconMail,
-  },
-  {
-    label: "GitHub",
-    href: "https://github.com/francistriesscience",
-    icon: IconBrandGithub,
-  },
-  {
-    label: "LinkedIn",
-    href: "https://linkedin.com/in/francistriesscience",
-    icon: IconBrandLinkedin,
-  },
-]
-
 const resumeHref =
   "https://drive.google.com/file/d/1-gi0nNzPXp_zLeoTXQ8_hSVVpJJkrhAk/view?usp=sharing"
 
@@ -70,7 +47,7 @@ const linkClassName =
   "text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
 
 export default function HomePage() {
-  const [activeTab, setActiveTab] = useState<"product" | "work">("product")
+  const [activeTab, setActiveTab] = useState<"works" | "experience">("works")
 
   return (
     <div className="bg-background text-foreground min-h-svh font-mono">
@@ -126,7 +103,7 @@ export default function HomePage() {
               <dt className="text-muted-foreground">Contacts</dt>
               <dd className="m-0">
                 <nav className="flex items-center gap-4" aria-label="Profile links">
-                  {links.map((link) => {
+                  {socials.map((link) => {
                     const Icon = link.icon
 
                     return (
@@ -148,7 +125,7 @@ export default function HomePage() {
             </div>
           </dl>
           <footer className="text-muted-foreground px-2 text-xs uppercase">
-            <p>© 2026 Francis Ignacio — Selected work</p>
+            <p>© 2026 Francis Ignacio — Selected works</p>
           </footer>
         </div>
       </aside>
@@ -161,34 +138,34 @@ export default function HomePage() {
             role="tablist"
           >
             <button
-              className={`text-xs uppercase ${activeTab === "product" ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+              className={`text-xs uppercase ${activeTab === "works" ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
               type="button"
               role="tab"
-              aria-selected={activeTab === "product"}
-              aria-controls="product-panel"
-              onClick={() => setActiveTab("product")}
+              aria-selected={activeTab === "works"}
+              aria-controls="works-panel"
+              onClick={() => setActiveTab("works")}
             >
-              Product
+              Works
             </button>
             <button
-              className={`text-xs uppercase ${activeTab === "work" ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+              className={`text-xs uppercase ${activeTab === "experience" ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
               type="button"
               role="tab"
-              aria-selected={activeTab === "work"}
-              aria-controls="work-panel"
-              onClick={() => setActiveTab("work")}
+              aria-selected={activeTab === "experience"}
+              aria-controls="experience-panel"
+              onClick={() => setActiveTab("experience")}
             >
-              Work
+              Experience
             </button>
           </nav>
 
-          {activeTab === "product" ? (
-            <section id="product-panel" className="p-2" aria-labelledby="product-heading">
-              <h1 id="product-heading" className="sr-only">
-                Products
+          {activeTab === "works" ? (
+            <section id="works-panel" className="p-2" aria-labelledby="works-heading">
+              <h1 id="works-heading" className="sr-only">
+                Works
               </h1>
               <div className="grid gap-2 sm:grid-cols-2">
-                {products.map((project) => (
+                {works.map((project) => (
                   <article key={project.name} className="group">
                     <Link
                       className="focus-visible:outline-ring block focus-visible:outline-2 focus-visible:outline-offset-4"
@@ -222,12 +199,12 @@ export default function HomePage() {
               </div>
             </section>
           ) : (
-            <section id="work-panel" className="p-2" aria-labelledby="work-heading">
-              <h1 id="work-heading" className="sr-only">
-                Work
+            <section id="experience-panel" className="p-2" aria-labelledby="experience-heading">
+              <h1 id="experience-heading" className="sr-only">
+                Experience
               </h1>
               <div className="divide-border border-border divide-y border-y">
-                {work.map((item) => (
+                {experience.map((item) => (
                   <article key={`${item.company}-${item.role}`} className="space-y-2 p-2">
                     <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
                       <h2 className="font-sans text-base font-medium tracking-tight">

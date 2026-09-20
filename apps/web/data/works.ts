@@ -1,4 +1,4 @@
-export const products = [
+export const works = [
   {
     name: "Safegate",
     href: "https://usesafegate.com",
