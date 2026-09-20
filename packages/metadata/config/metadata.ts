@@ -4,7 +4,7 @@ import { baseKeywords } from "./keywords"
 export { baseKeywords } from "./keywords"
 
 const defaultDescription =
-  "Product engineer and startup co-founder specializing in 0–1 product development, applied AI, and reliable software systems. Based in Mabalacat City, Pampanga, currently building Pantrack and Pleo at Mnemora."
+  "Product engineer and startup co-founder turning ambitious ideas into useful software, with a focus on applied AI and reliable systems. Currently building Pantrack and Pleo at Mnemora."
 const defaultUrl = "https://francisdotmd.page"
 
 export interface MetadataConfig extends Omit<Metadata, "description" | "keywords"> {
