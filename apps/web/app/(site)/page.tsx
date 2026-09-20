@@ -132,7 +132,7 @@ export default function HomePage() {
             <p>
               © 2026 Francis Ignacio +{" "}
               <Link
-                className="hover:text-foreground normal-case"
+                className="hover:text-foreground"
                 href="https://mnemora.org/"
                 target="_blank"
                 rel="noreferrer"
