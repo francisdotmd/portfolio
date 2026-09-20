@@ -239,10 +239,6 @@ export default function HomePage() {
             </section>
           )}
         </div>
-        <div
-          className="bg-background/50 pointer-events-none fixed inset-x-0 bottom-0 z-20 h-32 mask-[linear-gradient(to_bottom,transparent,black_35%)] backdrop-blur-lg lg:left-80"
-          aria-hidden="true"
-        />
       </main>
     </div>
   )
