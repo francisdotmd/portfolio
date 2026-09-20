@@ -1,5 +1,11 @@
 import Link from "next/link"
-import { IconArrowUpRight } from "@tabler/icons-react"
+import {
+  IconArrowUpRight,
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconFileCv,
+  IconMail,
+} from "@tabler/icons-react"
 
 const work = [
   {
@@ -71,11 +77,21 @@ const skillGroups = [
 
 const links = [
   {
+    label: "Email",
+    href: "mailto:hello@francisdotmd.page",
+    icon: IconMail,
+  },
+  {
     label: "Résumé",
     href: "https://drive.google.com/file/d/1-gi0nNzPXp_zLeoTXQ8_hSVVpJJkrhAk/view?usp=sharing",
+    icon: IconFileCv,
   },
-  { label: "GitHub", href: "https://github.com/francistriesscience" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/francistriesscience" },
+  { label: "GitHub", href: "https://github.com/francistriesscience", icon: IconBrandGithub },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/francistriesscience",
+    icon: IconBrandLinkedin,
+  },
 ]
 
 const labelClassName = "font-mono text-sm uppercase tracking-[0.08em] text-muted-foreground"
@@ -87,43 +103,57 @@ export default function HomePage() {
     <div className="bg-background text-foreground min-h-svh font-mono lg:h-svh lg:overflow-hidden">
       <aside className="border-border bg-background flex flex-col justify-between gap-10 border-b p-2 lg:fixed lg:inset-y-0 lg:left-0 lg:w-80 lg:overflow-hidden lg:border-r lg:border-b-0">
         <div className="space-y-10">
-          <header className="space-y-3">
-            <p className={labelClassName}>Francis Ignacio</p>
-            <h1 className="font-sans text-2xl leading-tight font-medium tracking-[-0.04em]">
-              AI Engineer &amp; Product Engineer
-            </h1>
-            <p className="text-muted-foreground font-sans text-sm">Startup co-founder</p>
+          <header className="space-y-4">
+            <div className="flex items-center gap-2">
+              <span className="bg-foreground size-2" aria-hidden="true" />
+              <p className={labelClassName}>Francis Ignacio</p>
+            </div>
+            <p className="text-muted-foreground max-w-xs font-sans text-sm leading-6">
+              AI engineer, product engineer, and startup co-founder building products that have to
+              stay up.
+            </p>
           </header>
 
-          <div className="text-muted-foreground space-y-2 font-sans text-sm leading-6">
-            <p>Philippines</p>
-            <Link className={linkClassName} href="mailto:hello@francisdotmd.page">
-              hello@francisdotmd.page
-            </Link>
-          </div>
+          <nav className="flex items-center gap-4" aria-label="Profile links">
+            {links.map((link) => {
+              const Icon = link.icon
 
-          <nav
-            className="flex flex-wrap gap-x-4 gap-y-2 text-xs uppercase"
-            aria-label="Profile links"
-          >
-            {links.map((link) => (
-              <Link
-                key={link.label}
-                className={linkClassName}
-                href={link.href}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {link.label}
-              </Link>
-            ))}
+              return (
+                <Link
+                  key={link.label}
+                  className="text-muted-foreground hover:text-foreground focus-visible:outline-ring focus-visible:outline-2 focus-visible:outline-offset-4"
+                  href={link.href}
+                  aria-label={link.label}
+                  title={link.label}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                >
+                  <Icon className="size-4" aria-hidden="true" />
+                </Link>
+              )
+            })}
           </nav>
         </div>
 
-        <footer className="text-muted-foreground space-y-1 text-xs uppercase">
-          <p>© 2026 Francis Ignacio</p>
-          <p>francisdotmd.page</p>
-        </footer>
+        <div className="space-y-4">
+          <dl className="border-border border-t text-xs uppercase">
+            <div className="border-border flex justify-between gap-4 border-b p-2">
+              <dt className="text-muted-foreground">Timezone</dt>
+              <dd>PHT</dd>
+            </div>
+            <div className="border-border flex justify-between gap-4 border-b p-2">
+              <dt className="text-muted-foreground">Area</dt>
+              <dd>Philippines</dd>
+            </div>
+            <div className="border-border flex justify-between gap-4 border-b p-2">
+              <dt className="text-muted-foreground">Domain</dt>
+              <dd>francisdotmd.page</dd>
+            </div>
+          </dl>
+          <footer className="text-muted-foreground text-xs uppercase">
+            <p>© 2026 Francis Ignacio — Selected work</p>
+          </footer>
+        </div>
       </aside>
 
       <main className="lg:ml-80 lg:h-svh lg:overflow-y-auto">
@@ -143,20 +173,19 @@ export default function HomePage() {
                 Work
               </Link>
             </div>
-            <span className={labelClassName}>Scroll to explore</span>
+            <Link
+              className="text-muted-foreground hover:text-foreground flex items-center gap-1 text-xs uppercase"
+              href="#contact"
+            >
+              Contact
+              <IconArrowUpRight aria-hidden="true" className="size-3.5" />
+            </Link>
           </nav>
 
-          <section id="projects" className="space-y-4 p-2" aria-labelledby="projects-heading">
-            <div className="flex items-baseline justify-between gap-4">
-              <h2
-                id="projects-heading"
-                className="font-sans text-2xl font-medium tracking-[-0.04em]"
-              >
-                Selected work
-              </h2>
-              <p className={labelClassName}>{projects.length} projects</p>
-            </div>
-
+          <section id="projects" className="p-2" aria-labelledby="projects-heading">
+            <h2 id="projects-heading" className="sr-only">
+              Selected work
+            </h2>
             <div className="grid gap-2 sm:grid-cols-2">
               {projects.map((project) => (
                 <article key={project.name} className="group">
