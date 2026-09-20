@@ -27,5 +27,6 @@ export const works = [
     name: "Vital Escape",
     href: "https://vitalescape.app/join",
     image: "https://i.imgur.com/aUteI9U.png",
+    dates: "2026 — Present",
   },
 ]
