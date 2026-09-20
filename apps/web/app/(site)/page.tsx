@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
+import { useQueryParams } from "@/hooks/use-query-params"
 import { socials } from "@/data/socials"
 import { works } from "@/data/works"
 import { Avatar } from "@packages/ui-w/shared/avatar/avatar"
@@ -47,7 +47,8 @@ const linkClassName =
   "text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
 
 export default function HomePage() {
-  const [activeTab, setActiveTab] = useState<"works" | "experience">("works")
+  const { getQueryParam, setQueryParams } = useQueryParams()
+  const activeTab = getQueryParam("tab") === "experience" ? "experience" : "work"
 
   return (
     <div className="bg-background text-foreground min-h-svh font-mono lg:grid lg:grid-cols-[20rem_minmax(0,1fr)]">
@@ -152,12 +153,12 @@ export default function HomePage() {
             role="tablist"
           >
             <button
-              className={`text-xs uppercase ${activeTab === "works" ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+              className={`text-xs uppercase ${activeTab === "work" ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
               type="button"
               role="tab"
-              aria-selected={activeTab === "works"}
+              aria-selected={activeTab === "work"}
               aria-controls="works-panel"
-              onClick={() => setActiveTab("works")}
+              onClick={() => setQueryParams({ tab: "work" })}
             >
               Work
             </button>
@@ -167,13 +168,13 @@ export default function HomePage() {
               role="tab"
               aria-selected={activeTab === "experience"}
               aria-controls="experience-panel"
-              onClick={() => setActiveTab("experience")}
+              onClick={() => setQueryParams({ tab: "experience" })}
             >
               Experience
             </button>
           </nav>
 
-          {activeTab === "works" ? (
+          {activeTab === "work" ? (
             <section id="works-panel" className="p-2" aria-labelledby="works-heading">
               <h1 id="works-heading" className="sr-only">
                 Work
