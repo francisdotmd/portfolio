@@ -6,7 +6,7 @@ import { useQueryParams } from "@/hooks/use-query-params"
 import { Avatar } from "@packages/ui-w/shared/avatar/avatar"
 import { AvatarFallback } from "@packages/ui-w/shared/avatar/avatar-fallback"
 import { AvatarImage } from "@packages/ui-w/shared/avatar/avatar-image"
-import { IconArrowUpRight, IconDownload, IconMail } from "@tabler/icons-react"
+import { IconArrowUpRight, IconDownload, IconSend } from "@tabler/icons-react"
 import Link from "next/link"
 
 const experience = [
@@ -86,7 +86,7 @@ export default function HomePage() {
                   href="mailto:hello@francisdotmd.page"
                 >
                   hello@francisdotmd.page
-                  <IconMail aria-hidden="true" className="size-4" />
+                  <IconSend aria-hidden="true" className="size-4" />
                 </Link>
               </dd>
             </div>
