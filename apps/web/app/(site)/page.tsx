@@ -50,8 +50,8 @@ export default function HomePage() {
   const [activeTab, setActiveTab] = useState<"works" | "experience">("works")
 
   return (
-    <div className="bg-background text-foreground min-h-svh font-mono">
-      <aside className="border-border bg-background flex flex-col justify-between gap-10 border-b p-2 lg:fixed lg:inset-y-0 lg:left-[max(0px,calc((100vw-72rem)/2))] lg:w-80 lg:overflow-hidden lg:border-r lg:border-b-0">
+    <div className="bg-background text-foreground min-h-svh font-mono lg:grid lg:grid-cols-[20rem_minmax(0,1fr)]">
+      <aside className="border-border bg-background flex flex-col justify-between gap-10 border-b p-2 lg:sticky lg:top-0 lg:h-svh lg:overflow-hidden lg:border-r lg:border-b-0">
         <div className="space-y-10">
           <header className="space-y-4">
             <div className="flex items-center gap-2">
@@ -144,7 +144,7 @@ export default function HomePage() {
         </div>
       </aside>
 
-      <main className="lg:ml-80">
+      <main className="min-w-0">
         <div className="w-full">
           <nav
             className="border-border bg-background/95 sticky top-0 z-10 flex items-center gap-4 border-b p-2 backdrop-blur"
