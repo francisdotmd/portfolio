@@ -1,33 +1,33 @@
-"use client"
-
-import { Tabs } from "@packages/ui-w/shared/tabs/tabs"
-import { TabsList } from "@packages/ui-w/shared/tabs/tabs-list"
-import { TabsTab } from "@packages/ui-w/shared/tabs/tabs-tab"
-
 type Tab = "work" | "experience"
 
 type HomeTabsProps = {
   value: Tab
-  onValueChangeAction: (value: string) => void
+  onValueChangeAction: (value: Tab) => void
 }
 
 export function HomeTabs({ value, onValueChangeAction }: HomeTabsProps) {
   return (
-    <Tabs value={value} onValueChange={onValueChangeAction} className="gap-0">
-      <TabsList aria-label="Portfolio views" className="gap-4" variant="underline">
-        <TabsTab
-          className="text-muted-foreground data-active:text-foreground h-auto rounded-none px-0 py-0 text-xs font-normal uppercase hover:bg-transparent"
-          value="work"
-        >
-          Work
-        </TabsTab>
-        <TabsTab
-          className="text-muted-foreground data-active:text-foreground h-auto rounded-none px-0 py-0 text-xs font-normal uppercase hover:bg-transparent"
-          value="experience"
-        >
-          Experience
-        </TabsTab>
-      </TabsList>
-    </Tabs>
+    <>
+      <button
+        className={`text-xs uppercase ${value === "work" ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+        type="button"
+        role="tab"
+        aria-selected={value === "work"}
+        aria-controls="works-panel"
+        onClick={() => onValueChangeAction("work")}
+      >
+        Work
+      </button>
+      <button
+        className={`text-xs uppercase ${value === "experience" ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+        type="button"
+        role="tab"
+        aria-selected={value === "experience"}
+        aria-controls="experience-panel"
+        onClick={() => onValueChangeAction("experience")}
+      >
+        Experience
+      </button>
+    </>
   )
 }
