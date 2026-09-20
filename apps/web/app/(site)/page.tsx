@@ -63,7 +63,7 @@ const projects = [
   {
     name: "Chromiq",
     href: "https://chromiq.mnemora.org",
-    image: "https://i.imgur.com/j3mfovT.gif",
+    image: "https://i.imgur.com/ctgwyjW.png",
     type: "Product",
     dates: "2025 — Present",
   },
