@@ -66,9 +66,9 @@ export default function HomePage() {
               <p className={labelClassName}>Francis Ignacio</p>
             </div>
             <p className="text-muted-foreground max-w-xs font-sans text-sm leading-6">
-              I co-founded Mnemora to turn ambitious ideas into products people can rely on. I’m an
-              AI engineer and product engineer based in Mabalacat City, Pampanga, currently building
-              Pantrack and Pleo.
+              I like my AI useful, my products shippable, and my ideas just ambitious enough to
+              cause trouble. I’m an AI and product engineer from Mabalacat City, Pampanga, and
+              co-founder of Mnemora, currently building Pantrack and Pleo.
             </p>
           </header>
         </div>
