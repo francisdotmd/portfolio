@@ -212,7 +212,7 @@ export default function HomePage() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <div className="bg-muted aspect-[4/3] overflow-hidden">
+                      <div className="bg-muted aspect-video overflow-hidden">
                         <div
                           className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-[1.02]"
                           style={{ backgroundImage: `url("${project.image}")` }}
