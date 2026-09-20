@@ -146,7 +146,7 @@ export default function HomePage() {
         </div>
       </aside>
 
-      <main className="relative min-h-svh min-w-0">
+      <main className="min-w-0">
         <div className="w-full">
           <nav
             className="border-border bg-background/95 sticky top-0 z-10 flex items-center gap-4 border-b p-2 backdrop-blur"
@@ -240,7 +240,7 @@ export default function HomePage() {
           )}
         </div>
         <div
-          className="bg-background/50 pointer-events-none absolute inset-x-0 bottom-0 z-20 h-32 mask-[linear-gradient(to_bottom,transparent,black_35%)] backdrop-blur-lg"
+          className="bg-background/50 pointer-events-none fixed inset-x-0 bottom-0 z-20 h-32 mask-[linear-gradient(to_bottom,transparent,black_35%)] backdrop-blur-lg lg:left-80"
           aria-hidden="true"
         />
       </main>
