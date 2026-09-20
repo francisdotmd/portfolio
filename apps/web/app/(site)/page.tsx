@@ -43,28 +43,24 @@ const projects = [
     name: "Safegate",
     href: "https://usesafegate.com",
     image: "https://i.imgur.com/wqBdFaR.png",
-    type: "Product",
     dates: "2026 — Present",
   },
   {
     name: "Applywise",
     href: "https://applywise.today",
     image: "https://i.imgur.com/RGOIhLi.png",
-    type: "Product",
     dates: "2026 — Present",
   },
   {
     name: "ADU Portal",
     href: "https://aduportal.com/",
     image: "https://i.imgur.com/GgZE1Ie.png",
-    type: "Product",
     dates: "2025 — Present",
   },
   {
     name: "Chromiq",
     href: "https://chromiq.mnemora.org",
     image: "https://i.imgur.com/ctgwyjW.png",
-    type: "Product",
     dates: "2025 — Present",
   },
 ]
@@ -224,9 +220,7 @@ export default function HomePage() {
                           <h2 className="font-sans text-base font-medium tracking-tight">
                             {project.name}
                           </h2>
-                          <p className="text-muted-foreground text-xs uppercase">
-                            {project.type}, {project.dates}
-                          </p>
+                          <p className="text-muted-foreground text-xs uppercase">{project.dates}</p>
                         </div>
                         <IconArrowUpRight aria-hidden="true" className="size-4 shrink-0" />
                       </div>
