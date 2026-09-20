@@ -7,7 +7,7 @@ import { works } from "@/data/works"
 import { Avatar } from "@packages/ui-w/shared/avatar/avatar"
 import { AvatarFallback } from "@packages/ui-w/shared/avatar/avatar-fallback"
 import { AvatarImage } from "@packages/ui-w/shared/avatar/avatar-image"
-import { IconArrowUpRight, IconDownload } from "@tabler/icons-react"
+import { IconArrowUpRight, IconDownload, IconMail } from "@tabler/icons-react"
 
 const experience = [
   {
@@ -80,8 +80,12 @@ export default function HomePage() {
             <div className="border-border flex justify-between gap-4 border-b p-2">
               <dt className="text-muted-foreground">Email</dt>
               <dd>
-                <Link className="hover:text-foreground" href="mailto:hello@francisdotmd.page">
+                <Link
+                  className="hover:text-foreground flex items-center gap-1"
+                  href="mailto:hello@francisdotmd.page"
+                >
                   hello@francisdotmd.page
+                  <IconMail aria-hidden="true" className="size-4" />
                 </Link>
               </dd>
             </div>
