@@ -1,43 +1,15 @@
 "use client"
 
+import { WorkCard } from "@/components/pages/home/_card/work-card"
+import { experiences } from "@/data/experiences"
 import { socials } from "@/data/socials"
 import { works } from "@/data/works"
 import { useQueryParams } from "@/hooks/use-query-params"
 import { Avatar } from "@packages/ui-w/shared/avatar/avatar"
 import { AvatarFallback } from "@packages/ui-w/shared/avatar/avatar-fallback"
 import { AvatarImage } from "@packages/ui-w/shared/avatar/avatar-image"
-import { IconArrowUpRight, IconDownload, IconSend } from "@tabler/icons-react"
+import { IconDownload, IconSend } from "@tabler/icons-react"
 import Link from "next/link"
-
-const experience = [
-  {
-    role: "Product Engineer",
-    company: "Mnemora",
-    dates: "2026 — Present",
-    description: "Building thoughtful software products from the first line of code to production.",
-  },
-  {
-    role: "Senior Software Engineer",
-    company: "Avorino",
-    dates: "Mar 2025 — Apr 2026",
-    description:
-      "Designed the backend architecture for an AI-driven ADU feasibility portal with financial modeling for ROI and loan analytics.",
-  },
-  {
-    role: "Professor",
-    company: "Holy Angel University",
-    dates: "Aug 2023 — Oct 2025",
-    description:
-      "Taught backend engineering, data analytics, and machine learning while mentoring students toward production-grade work.",
-  },
-  {
-    role: "Backend Engineer",
-    company: "Presscart",
-    dates: "Jan 2024 — Jul 2024",
-    description:
-      "Migrated legacy services to Node.js and improved API response times and storefront performance.",
-  },
-]
 
 const resumeHref =
   "https://drive.google.com/file/d/1-gi0nNzPXp_zLeoTXQ8_hSVVpJJkrhAk/view?usp=sharing"
@@ -182,35 +154,7 @@ export default function HomePage() {
               </h1>
               <div className="grid gap-2 sm:grid-cols-2">
                 {works.map((project) => (
-                  <article key={project.name} className="group">
-                    <Link
-                      className="focus-visible:outline-ring block focus-visible:outline-2 focus-visible:outline-offset-4"
-                      href={project.href}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <div className="bg-muted aspect-video overflow-hidden">
-                        <div
-                          className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-[1.02]"
-                          style={{ backgroundImage: `url("${project.image}")` }}
-                          aria-hidden="true"
-                        />
-                      </div>
-                      <div className="flex items-start justify-between gap-4 p-2">
-                        <div>
-                          <h2 className="font-sans text-base font-medium tracking-tight">
-                            {project.name}
-                          </h2>
-                          {project.dates ? (
-                            <p className="text-muted-foreground text-xs uppercase">
-                              {project.dates}
-                            </p>
-                          ) : null}
-                        </div>
-                        <IconArrowUpRight aria-hidden="true" className="size-4 shrink-0" />
-                      </div>
-                    </Link>
-                  </article>
+                  <WorkCard key={project.name} project={project} />
                 ))}
               </div>
             </section>
@@ -220,7 +164,7 @@ export default function HomePage() {
                 Experience
               </h1>
               <div className="divide-border border-border divide-y border-y">
-                {experience.map((item) => (
+                {experiences.map((item) => (
                   <article key={`${item.company}-${item.role}`} className="space-y-2 p-2">
                     <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
                       <h2 className="font-sans text-base font-medium tracking-tight">
