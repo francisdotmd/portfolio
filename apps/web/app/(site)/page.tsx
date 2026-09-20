@@ -76,7 +76,7 @@ export default function HomePage() {
                   render={
                     <span
                       aria-label="Pantrack status"
-                      className="text-foreground decoration-border cursor-help underline underline-offset-4"
+                      className="text-foreground decoration-border underline underline-offset-4"
                       tabIndex={0}
                     >
                       Pantrack
@@ -93,7 +93,7 @@ export default function HomePage() {
                   render={
                     <span
                       aria-label="Pleo status"
-                      className="text-foreground decoration-border cursor-help underline underline-offset-4"
+                      className="text-foreground decoration-border underline underline-offset-4"
                       tabIndex={0}
                     >
                       Pleo
@@ -105,6 +105,9 @@ export default function HomePage() {
                 </TooltipPopup>
               </Tooltip>{" "}
               at Mnemora.
+            </p>
+            <p className="text-muted-foreground max-w-xs font-sans text-sm leading-6">
+              Learn more about me, scroll through my archives, or connect with me below.
             </p>
           </header>
         </div>
