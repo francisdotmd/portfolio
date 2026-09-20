@@ -4,7 +4,7 @@ import { baseKeywords } from "./keywords"
 export { baseKeywords } from "./keywords"
 
 const defaultDescription =
-  "Product engineer and startup co-founder turning ambitious ideas into useful software, with a focus on applied AI and reliable systems. Currently building Pantrack and Pleo at Mnemora."
+  "Product engineer and startup co-founder at Mnemora, turning ambitious ideas into useful software with a focus on applied AI and reliable systems."
 const defaultUrl = "https://francisdotmd.page"
 
 export interface MetadataConfig extends Omit<Metadata, "description" | "keywords"> {

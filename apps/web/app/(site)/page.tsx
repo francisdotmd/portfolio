@@ -8,9 +8,6 @@ import { AvatarFallback } from "@packages/ui-w/shared/avatar/avatar-fallback"
 import { AvatarImage } from "@packages/ui-w/shared/avatar/avatar-image"
 import { IconArrowUpRight, IconDownload, IconMail } from "@tabler/icons-react"
 import Link from "next/link"
-import { Tooltip } from "@packages/ui-w/shared/tooltip/tooltip"
-import { TooltipPopup } from "@packages/ui-w/shared/tooltip/tooltip-popup"
-import { TooltipTrigger } from "@packages/ui-w/shared/tooltip/tooltip-trigger"
 
 const experience = [
   {
@@ -70,44 +67,7 @@ export default function HomePage() {
             </div>
             <p className="text-muted-foreground max-w-xs font-sans text-sm leading-6">
               Product engineer and startup co-founder turning ambitious ideas into useful software,
-              with a focus on applied AI and reliable systems. I’m currently building{" "}
-              <Tooltip>
-                <TooltipTrigger
-                  render={
-                    <span
-                      aria-label="Pantrack status"
-                      className="text-foreground decoration-border underline underline-offset-4"
-                      tabIndex={0}
-                    >
-                      Pantrack
-                    </span>
-                  }
-                />
-                <TooltipPopup side="top" align="center">
-                  in development
-                </TooltipPopup>
-              </Tooltip>{" "}
-              and{" "}
-              <Tooltip>
-                <TooltipTrigger
-                  render={
-                    <span
-                      aria-label="Pleo status"
-                      className="text-foreground decoration-border underline underline-offset-4"
-                      tabIndex={0}
-                    >
-                      Pleo
-                    </span>
-                  }
-                />
-                <TooltipPopup side="top" align="center">
-                  in development
-                </TooltipPopup>
-              </Tooltip>{" "}
-              at Mnemora.
-            </p>
-            <p className="text-muted-foreground max-w-xs font-sans text-sm leading-6">
-              Learn more about me, scroll through my archives, or connect with me below.
+              with a focus on applied AI and reliable systems.
             </p>
           </header>
         </div>
