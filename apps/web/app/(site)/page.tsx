@@ -51,7 +51,7 @@ export default function HomePage() {
 
   return (
     <div className="bg-background text-foreground min-h-svh font-mono lg:grid lg:grid-cols-[20rem_minmax(0,1fr)]">
-      <aside className="border-border bg-background flex flex-col justify-between gap-10 border-b p-2 lg:sticky lg:top-0 lg:h-svh lg:overflow-hidden lg:border-r lg:border-b-0">
+      <aside className="border-border bg-background flex flex-col justify-between gap-10 border-b p-2 lg:sticky lg:top-0 lg:h-svh lg:self-start lg:overflow-hidden lg:border-r lg:border-b-0">
         <div className="space-y-10">
           <header className="space-y-4">
             <div className="flex items-center gap-2">
@@ -159,7 +159,7 @@ export default function HomePage() {
               aria-controls="works-panel"
               onClick={() => setActiveTab("works")}
             >
-              Works
+              Work
             </button>
             <button
               className={`text-xs uppercase ${activeTab === "experience" ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
@@ -176,7 +176,7 @@ export default function HomePage() {
           {activeTab === "works" ? (
             <section id="works-panel" className="p-2" aria-labelledby="works-heading">
               <h1 id="works-heading" className="sr-only">
-                Works
+                Work
               </h1>
               <div className="grid gap-2 sm:grid-cols-2">
                 {works.map((project) => (
