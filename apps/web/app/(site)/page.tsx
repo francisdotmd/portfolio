@@ -1,22 +1,12 @@
 "use client"
 
+import { Footer } from "@/components/pages/home/_section/footer"
+import { Information } from "@/components/pages/home/_section/information"
+import { Introduction } from "@/components/pages/home/_section/introduction"
 import { WorkCard } from "@/components/pages/home/_card/work-card"
 import { experiences } from "@/data/experiences"
-import { socials } from "@/data/socials"
 import { works } from "@/data/works"
 import { useQueryParams } from "@/hooks/use-query-params"
-import { Avatar } from "@packages/ui-w/shared/avatar/avatar"
-import { AvatarFallback } from "@packages/ui-w/shared/avatar/avatar-fallback"
-import { AvatarImage } from "@packages/ui-w/shared/avatar/avatar-image"
-import { IconDownload, IconSend } from "@tabler/icons-react"
-import Link from "next/link"
-
-const resumeHref =
-  "https://drive.google.com/file/d/1-gi0nNzPXp_zLeoTXQ8_hSVVpJJkrhAk/view?usp=sharing"
-
-const labelClassName = "font-mono text-sm uppercase tracking-[0.08em] text-muted-foreground"
-const linkClassName =
-  "text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
 
 export default function HomePage() {
   const { getQueryParam, setQueryParams } = useQueryParams()
@@ -26,95 +16,12 @@ export default function HomePage() {
     <div className="bg-background text-foreground min-h-svh font-mono lg:grid lg:grid-cols-[20rem_minmax(0,1fr)]">
       <aside className="border-border bg-background flex flex-col justify-between gap-10 border-b p-2 lg:sticky lg:top-0 lg:h-svh lg:self-start lg:overflow-hidden lg:border-r lg:border-b-0">
         <div className="space-y-10">
-          <header className="space-y-4">
-            <div className="flex items-center gap-2">
-              <Avatar className="size-5 rounded-none">
-                <AvatarImage
-                  src="https://avatars.githubusercontent.com/u/239557641?v=4"
-                  alt="Francis Ignacio"
-                />
-                <AvatarFallback className="rounded-none text-[8px]">FI</AvatarFallback>
-              </Avatar>
-              <p className={labelClassName}>Francis Ignacio</p>
-            </div>
-            <p className="text-muted-foreground max-w-xs font-sans text-sm leading-6">
-              Product engineer and startup co-founder turning ambitious ideas into useful software,
-              with a focus on applied AI and reliable systems.
-            </p>
-          </header>
+          <Introduction />
         </div>
 
         <div className="space-y-2">
-          <dl className="border-border border-t text-xs uppercase">
-            <div className="border-border flex justify-between gap-4 border-b p-2">
-              <dt className="text-muted-foreground">Area, TZ</dt>
-              <dd>Philippines, PHT</dd>
-            </div>
-            <div className="border-border flex justify-between gap-4 border-b p-2">
-              <dt className="text-muted-foreground">Email</dt>
-              <dd>
-                <Link
-                  className="hover:text-foreground flex items-center gap-1"
-                  href="mailto:hello@francisdotmd.page"
-                >
-                  hello@francisdotmd.page
-                  <IconSend aria-hidden="true" className="size-4" />
-                </Link>
-              </dd>
-            </div>
-            <div className="border-border flex justify-between gap-4 border-b p-2">
-              <dt className="text-muted-foreground">Paper</dt>
-              <dd>
-                <Link
-                  className="hover:text-foreground flex items-center gap-1"
-                  href={resumeHref}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Resume
-                  <IconDownload aria-hidden="true" className="size-4" />
-                </Link>
-              </dd>
-            </div>
-            <div className="border-border flex items-center justify-between gap-4 border-b p-2">
-              <dt className="text-muted-foreground">Contacts</dt>
-              <dd className="m-0">
-                <nav className="flex items-center gap-4" aria-label="Profile links">
-                  {socials.map((link) => {
-                    const Icon = link.icon
-
-                    return (
-                      <Link
-                        key={link.label}
-                        className="focus-visible:outline-ring transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4"
-                        style={{ color: link.color }}
-                        href={link.href}
-                        aria-label={link.label}
-                        title={link.label}
-                        target={link.href.startsWith("http") ? "_blank" : undefined}
-                        rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                      >
-                        <Icon className="size-4" aria-hidden="true" />
-                      </Link>
-                    )
-                  })}
-                </nav>
-              </dd>
-            </div>
-          </dl>
-          <footer className="text-muted-foreground px-2 text-xs uppercase">
-            <p>
-              © 2026 Francis Ignacio +{" "}
-              <Link
-                className="hover:text-foreground"
-                href="https://mnemora.org/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Mnemora
-              </Link>
-            </p>
-          </footer>
+          <Information />
+          <Footer />
         </div>
       </aside>
 
