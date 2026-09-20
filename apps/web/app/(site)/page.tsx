@@ -6,7 +6,13 @@ import { useQueryParams } from "@/hooks/use-query-params"
 import { Avatar } from "@packages/ui-w/shared/avatar/avatar"
 import { AvatarFallback } from "@packages/ui-w/shared/avatar/avatar-fallback"
 import { AvatarImage } from "@packages/ui-w/shared/avatar/avatar-image"
-import { IconArrowUpRight, IconDownload, IconMail } from "@tabler/icons-react"
+import {
+  IconArrowUpRight,
+  IconBasketSearch,
+  IconCubeUnfolded,
+  IconDownload,
+  IconMail,
+} from "@tabler/icons-react"
 import Link from "next/link"
 
 const experience = [
@@ -66,9 +72,18 @@ export default function HomePage() {
               <p className={labelClassName}>Francis Ignacio</p>
             </div>
             <p className="text-muted-foreground max-w-xs font-sans text-sm leading-6">
-              Product engineer and startup co-founder specializing in 0–1 product development,
-              applied AI, and the systems that make software reliable. I’m based in Mabalacat City,
-              Pampanga, and currently building Pantrack and Pleo at Mnemora.
+              Product engineer and startup co-founder turning ambitious ideas into useful software,
+              with a focus on applied AI and reliable systems. I’m currently building{" "}
+              <span className="inline-flex items-center gap-1 align-middle whitespace-nowrap">
+                <IconBasketSearch aria-hidden="true" className="size-4" />
+                Pantrack
+              </span>{" "}
+              and{" "}
+              <span className="inline-flex items-center gap-1 align-middle whitespace-nowrap">
+                <IconCubeUnfolded aria-hidden="true" className="size-4" />
+                Pleo
+              </span>{" "}
+              at Mnemora.
             </p>
           </header>
         </div>
