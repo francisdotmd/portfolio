@@ -34,10 +34,6 @@ export default function RootLayout({
               <QueryProvider>
                 <main className="bg-background text-foreground max-w-8xl relative mx-auto min-h-svh w-full overflow-x-clip">
                   {children}
-                  <div
-                    className="bg-background/50 pointer-events-none fixed inset-x-0 bottom-0 z-20 h-32 [mask-image:linear-gradient(to_bottom,transparent,black_35%)] backdrop-blur-lg"
-                    aria-hidden="true"
-                  />
                 </main>
               </QueryProvider>
             </TooltipProvider>
