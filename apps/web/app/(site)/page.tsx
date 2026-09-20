@@ -5,8 +5,13 @@ import Link from "next/link"
 import { Avatar } from "@packages/ui-w/shared/avatar/avatar"
 import { AvatarFallback } from "@packages/ui-w/shared/avatar/avatar-fallback"
 import { AvatarImage } from "@packages/ui-w/shared/avatar/avatar-image"
-import { Github, Linkedin } from "@thesvg/react"
-import { IconArrowUpRight, IconDownload, IconMail } from "@tabler/icons-react"
+import {
+  IconArrowUpRight,
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconDownload,
+  IconMail,
+} from "@tabler/icons-react"
 
 const work = [
   {
@@ -71,11 +76,15 @@ const links = [
     href: "mailto:hello@francisdotmd.page",
     icon: IconMail,
   },
-  { label: "GitHub", href: "https://github.com/francistriesscience", icon: Github },
+  {
+    label: "GitHub",
+    href: "https://github.com/francistriesscience",
+    icon: IconBrandGithub,
+  },
   {
     label: "LinkedIn",
     href: "https://linkedin.com/in/francistriesscience",
-    icon: Linkedin,
+    icon: IconBrandLinkedin,
   },
 ]
 
@@ -140,6 +149,7 @@ export default function HomePage() {
               </dd>
             </div>
           </dl>
+          <p className={`${labelClassName} px-2`}>Contacts</p>
           <nav className="flex items-center gap-4 px-2" aria-label="Profile links">
             {links.map((link) => {
               const Icon = link.icon
