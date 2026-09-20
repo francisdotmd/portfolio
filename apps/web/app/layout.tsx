@@ -22,17 +22,17 @@ export default function RootLayout({
 }>) {
   return (
     <html className={spaceGrotesk.variable} lang="en" suppressHydrationWarning>
-      <body className="overflow-x-hidden font-sans tracking-tight antialiased">
+      <body className="overflow-x-clip font-sans tracking-tight antialiased">
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem={false}
           disableTransitionOnChange
         >
           <ToastProvider>
             <TooltipProvider delay={0}>
               <QueryProvider>
-                <main className="bg-background text-foreground relative mx-auto min-h-svh w-full max-w-6xl overflow-x-hidden">
+                <main className="bg-background text-foreground relative mx-auto min-h-svh w-full max-w-6xl overflow-x-clip">
                   {children}
                 </main>
               </QueryProvider>
