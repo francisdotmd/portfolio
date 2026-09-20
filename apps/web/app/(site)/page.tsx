@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { products } from "@/data/products"
 import { Avatar } from "@packages/ui-w/shared/avatar/avatar"
 import { AvatarFallback } from "@packages/ui-w/shared/avatar/avatar-fallback"
 import { AvatarImage } from "@packages/ui-w/shared/avatar/avatar-image"
@@ -40,33 +41,6 @@ const work = [
     dates: "Jan 2024 — Jul 2024",
     description:
       "Migrated legacy services to Node.js and improved API response times and storefront performance.",
-  },
-]
-
-const projects = [
-  {
-    name: "Safegate",
-    href: "https://usesafegate.com",
-    image: "https://i.imgur.com/wqBdFaR.png",
-    dates: "2026 — Present",
-  },
-  {
-    name: "Applywise",
-    href: "https://applywise.today",
-    image: "https://i.imgur.com/RGOIhLi.png",
-    dates: "2026 — Present",
-  },
-  {
-    name: "ADU Portal",
-    href: "https://aduportal.com/",
-    image: "https://i.imgur.com/GgZE1Ie.png",
-    dates: "2025 — Present",
-  },
-  {
-    name: "Chromiq",
-    href: "https://chromiq.mnemora.org",
-    image: "https://i.imgur.com/ctgwyjW.png",
-    dates: "2025 — Present",
   },
 ]
 
@@ -210,7 +184,7 @@ export default function HomePage() {
                 Products
               </h1>
               <div className="grid gap-2 sm:grid-cols-2">
-                {projects.map((project) => (
+                {products.map((project) => (
                   <article key={project.name} className="group">
                     <Link
                       className="focus-visible:outline-ring block focus-visible:outline-2 focus-visible:outline-offset-4"
@@ -230,7 +204,11 @@ export default function HomePage() {
                           <h2 className="font-sans text-base font-medium tracking-tight">
                             {project.name}
                           </h2>
-                          <p className="text-muted-foreground text-xs uppercase">{project.dates}</p>
+                          {project.dates ? (
+                            <p className="text-muted-foreground text-xs uppercase">
+                              {project.dates}
+                            </p>
+                          ) : null}
                         </div>
                         <IconArrowUpRight aria-hidden="true" className="size-4 shrink-0" />
                       </div>
