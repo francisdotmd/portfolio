@@ -4,14 +4,14 @@ import { Tabs } from "@packages/ui-w/shared/tabs/tabs"
 import { TabsList } from "@packages/ui-w/shared/tabs/tabs-list"
 import { TabsTab } from "@packages/ui-w/shared/tabs/tabs-tab"
 
-type HomeTab = "work" | "experience"
+type Tab = "work" | "experience"
 
-type HomeTabsProps = {
-  value: HomeTab
+type TabsVariantProps = {
+  value: Tab
   onValueChange: (value: string) => void
 }
 
-export function HomeTabs({ value, onValueChange }: HomeTabsProps) {
+export function TabsVariant({ value, onValueChange }: TabsVariantProps) {
   return (
     <Tabs value={value} onValueChange={onValueChange} className="gap-0">
       <TabsList aria-label="Portfolio views" className="gap-4" variant="underline">
