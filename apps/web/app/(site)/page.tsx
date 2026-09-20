@@ -2,6 +2,9 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { Avatar } from "@packages/ui-w/shared/avatar/avatar"
+import { AvatarFallback } from "@packages/ui-w/shared/avatar/avatar-fallback"
+import { AvatarImage } from "@packages/ui-w/shared/avatar/avatar-image"
 import {
   IconArrowUpRight,
   IconBrandGithub,
@@ -102,14 +105,14 @@ export default function HomePage() {
       <aside className="border-border bg-background flex flex-col justify-between gap-10 border-b p-2 lg:fixed lg:inset-y-0 lg:left-[max(0px,calc((100vw-72rem)/2))] lg:w-80 lg:overflow-hidden lg:border-r lg:border-b-0">
         <div className="space-y-10">
           <header className="space-y-4">
-            <div className="flex items-center gap-3">
-              <img
-                src="https://avatars.githubusercontent.com/u/239557641?v=4"
-                alt="Francis Ignacio"
-                width="32"
-                height="32"
-                className="size-8 rounded-full object-cover"
-              />
+            <div className="flex items-center gap-2">
+              <Avatar className="size-5 rounded-none">
+                <AvatarImage
+                  src="https://avatars.githubusercontent.com/u/239557641?v=4"
+                  alt="Francis Ignacio"
+                />
+                <AvatarFallback className="rounded-none text-[8px]">FI</AvatarFallback>
+              </Avatar>
               <p className={labelClassName}>Francis Ignacio</p>
             </div>
             <p className="text-muted-foreground max-w-xs font-sans text-sm leading-6">
