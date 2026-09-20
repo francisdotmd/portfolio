@@ -49,7 +49,7 @@ const projects = [
   {
     name: "Applywise",
     href: "https://applywise.today",
-    image: "https://i.imgur.com/yOtHt6G.gif",
+    image: "https://i.imgur.com/7zS4CLv.png",
     type: "Product",
     dates: "2026 — Present",
   },
