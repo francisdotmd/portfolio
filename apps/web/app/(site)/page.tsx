@@ -123,26 +123,28 @@ export default function HomePage() {
               </dd>
             </div>
           </dl>
-          <p className={`${labelClassName} px-2`}>Contacts</p>
-          <nav className="flex items-center gap-4 px-2" aria-label="Profile links">
-            {links.map((link) => {
-              const Icon = link.icon
+          <div className="border-border flex items-center justify-between gap-4 border-b p-2">
+            <p className={labelClassName}>Contacts</p>
+            <nav className="flex items-center gap-4" aria-label="Profile links">
+              {links.map((link) => {
+                const Icon = link.icon
 
-              return (
-                <Link
-                  key={link.label}
-                  className="text-muted-foreground hover:text-foreground focus-visible:outline-ring focus-visible:outline-2 focus-visible:outline-offset-4"
-                  href={link.href}
-                  aria-label={link.label}
-                  title={link.label}
-                  target={link.href.startsWith("http") ? "_blank" : undefined}
-                  rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                >
-                  <Icon className="size-4" aria-hidden="true" />
-                </Link>
-              )
-            })}
-          </nav>
+                return (
+                  <Link
+                    key={link.label}
+                    className="text-muted-foreground hover:text-foreground focus-visible:outline-ring focus-visible:outline-2 focus-visible:outline-offset-4"
+                    href={link.href}
+                    aria-label={link.label}
+                    title={link.label}
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                  >
+                    <Icon className="size-4" aria-hidden="true" />
+                  </Link>
+                )
+              })}
+            </nav>
+          </div>
           <footer className="text-muted-foreground px-2 text-xs uppercase">
             <p>© 2026 Francis Ignacio — Selected work</p>
           </footer>
