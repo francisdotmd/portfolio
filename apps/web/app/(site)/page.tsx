@@ -113,26 +113,6 @@ export default function HomePage() {
               stay up.
             </p>
           </header>
-
-          <nav className="flex items-center gap-4" aria-label="Profile links">
-            {links.map((link) => {
-              const Icon = link.icon
-
-              return (
-                <Link
-                  key={link.label}
-                  className="text-muted-foreground hover:text-foreground focus-visible:outline-ring focus-visible:outline-2 focus-visible:outline-offset-4"
-                  href={link.href}
-                  aria-label={link.label}
-                  title={link.label}
-                  target={link.href.startsWith("http") ? "_blank" : undefined}
-                  rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                >
-                  <Icon className="size-4" aria-hidden="true" />
-                </Link>
-              )
-            })}
-          </nav>
         </div>
 
         <div className="space-y-4">
@@ -142,10 +122,10 @@ export default function HomePage() {
               <dd>Philippines, PHT</dd>
             </div>
             <div className="border-border flex justify-between gap-4 border-b p-2">
-              <dt className="text-muted-foreground">Website</dt>
+              <dt className="text-muted-foreground">Email</dt>
               <dd>
-                <Link className="hover:text-foreground" href="https://francisdotmd.page">
-                  francisdotmd.page
+                <Link className="hover:text-foreground" href="mailto:hello@francisdotmd.page">
+                  hello@francisdotmd.page
                 </Link>
               </dd>
             </div>
@@ -164,7 +144,26 @@ export default function HomePage() {
               </dd>
             </div>
           </dl>
-          <footer className="text-muted-foreground text-xs uppercase">
+          <nav className="flex items-center gap-4 px-2" aria-label="Profile links">
+            {links.map((link) => {
+              const Icon = link.icon
+
+              return (
+                <Link
+                  key={link.label}
+                  className="text-muted-foreground hover:text-foreground focus-visible:outline-ring focus-visible:outline-2 focus-visible:outline-offset-4"
+                  href={link.href}
+                  aria-label={link.label}
+                  title={link.label}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                >
+                  <Icon className="size-4" aria-hidden="true" />
+                </Link>
+              )
+            })}
+          </nav>
+          <footer className="text-muted-foreground px-2 text-xs uppercase">
             <p>© 2026 Francis Ignacio — Selected work</p>
           </footer>
         </div>
