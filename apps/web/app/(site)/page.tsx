@@ -1,5 +1,5 @@
-import { IconArrowUpRight } from "@tabler/icons-react"
 import Link from "next/link"
+import { IconArrowUpRight } from "@tabler/icons-react"
 
 const work = [
   {
@@ -29,39 +29,51 @@ const work = [
     description:
       "Migrated legacy services to Node.js and improved API response times and storefront performance.",
   },
-  {
-    role: "Full Stack Engineer",
-    company: "Holy Angel University, KITTO",
-    dates: "Feb 2022 — Dec 2022",
-    description:
-      "Built prototypes for emerging web technologies and IoT integrations for a university-industry partnership.",
-  },
 ]
 
 const projects = [
-  { name: "Safegate", href: "https://usesafegate.com", description: "In development." },
-  { name: "Applywise", href: "https://applywise.today", description: "In development." },
+  {
+    name: "Safegate",
+    href: "https://usesafegate.com",
+    image: "https://i.imgur.com/K05LjiN.gif",
+    type: "Product",
+    dates: "2026 — Present",
+  },
+  {
+    name: "Applywise",
+    href: "https://applywise.today",
+    image: "https://i.imgur.com/yOtHt6G.gif",
+    type: "Product",
+    dates: "2026 — Present",
+  },
   {
     name: "ADU Portal",
     href: "https://aduportal.com/",
-    description: "An AI-driven feasibility portal for accessory dwelling unit projects.",
+    image: "https://i.imgur.com/WoSfnHg.gif",
+    type: "Product",
+    dates: "2025 — Present",
   },
   {
     name: "Chromiq",
     href: "https://chromiq.mnemora.org",
-    description: "A product project from my engineering work.",
+    image: "https://i.imgur.com/j3mfovT.gif",
+    type: "Product",
+    dates: "2025 — Present",
   },
 ]
 
 const skillGroups = [
   { label: "Languages", items: "Go · TypeScript · JavaScript · Python" },
-  { label: "Frontend", items: "Next.js · React · Astro · Tailwind CSS" },
+  { label: "Product", items: "AI engineering · Product engineering · System design" },
   { label: "Backend", items: "Node.js · Hono · FastAPI · Gin · PostgreSQL" },
   { label: "Infrastructure", items: "AWS · GCP · Docker · Kubernetes · Cloudflare" },
-  { label: "Tools", items: "GitHub Actions · CI/CD · Claude Code · Codex · Zed" },
 ]
 
 const links = [
+  {
+    label: "Résumé",
+    href: "https://drive.google.com/file/d/1-gi0nNzPXp_zLeoTXQ8_hSVVpJJkrhAk/view?usp=sharing",
+  },
   { label: "GitHub", href: "https://github.com/francistriesscience" },
   { label: "LinkedIn", href: "https://linkedin.com/in/francistriesscience" },
 ]
@@ -69,164 +81,192 @@ const links = [
 const labelClassName = "font-mono text-sm uppercase tracking-[0.08em] text-muted-foreground"
 const linkClassName =
   "text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
-const cellClassName = "border-border p-2"
 
 export default function HomePage() {
   return (
-    <div className="bg-background text-foreground min-h-svh font-mono">
-      <div className="border-border bg-background mx-auto max-w-full border-x">
-        <header className="border-border grid border-b sm:grid-cols-2">
-          <div className={`${cellClassName} border-b sm:border-r`}>
+    <div className="bg-background text-foreground min-h-svh font-mono lg:h-svh lg:overflow-hidden">
+      <aside className="border-border bg-background flex flex-col justify-between gap-10 border-b p-2 lg:fixed lg:inset-y-0 lg:left-0 lg:w-80 lg:overflow-hidden lg:border-r lg:border-b-0">
+        <div className="space-y-10">
+          <header className="space-y-3">
             <p className={labelClassName}>Francis Ignacio</p>
-          </div>
-          <div className={`${cellClassName} border-b`}>
-            <p className={labelClassName}>AI &amp; Product Engineering</p>
-          </div>
-          <div className={`${cellClassName} border-b sm:border-r sm:border-b-0`}>
-            <p className={labelClassName}>Philippines</p>
-          </div>
-          <div className={cellClassName}>
-            <Link
-              className={`${labelClassName} hover:text-foreground`}
-              href="mailto:hello@francisdotmd.page"
-            >
+            <h1 className="font-sans text-2xl leading-tight font-medium tracking-[-0.04em]">
+              AI Engineer &amp; Product Engineer
+            </h1>
+            <p className="text-muted-foreground font-sans text-sm">Startup co-founder</p>
+          </header>
+
+          <div className="text-muted-foreground space-y-2 font-sans text-sm leading-6">
+            <p>Philippines</p>
+            <Link className={linkClassName} href="mailto:hello@francisdotmd.page">
               hello@francisdotmd.page
             </Link>
           </div>
-        </header>
 
-        <section className="border-border grid border-b md:grid-cols-[minmax(12rem,0.8fr)_2fr]">
-          <div className={`${cellClassName} border-b md:border-r md:border-b-0`}>
-            <p className={labelClassName}>00 / Profile</p>
-          </div>
-          <div className={`${cellClassName} space-y-6`}>
-            <p className="text-muted-foreground font-sans text-sm leading-6">
-              I work across applied AI, product engineering, and reliable backend systems.
-            </p>
-            <nav
-              className="flex flex-wrap gap-x-5 gap-y-2 text-[11px] tracking-[0.08em] uppercase"
-              aria-label="Links"
-            >
+          <nav
+            className="flex flex-wrap gap-x-4 gap-y-2 text-xs uppercase"
+            aria-label="Profile links"
+          >
+            {links.map((link) => (
               <Link
+                key={link.label}
                 className={linkClassName}
-                href="https://drive.google.com/file/d/1-gi0nNzPXp_zLeoTXQ8_hSVVpJJkrhAk/view?usp=sharing"
+                href={link.href}
                 target="_blank"
                 rel="noreferrer"
               >
-                Résumé
+                {link.label}
               </Link>
-              {links.map((link) => (
-                <Link
-                  key={link.label}
-                  className={linkClassName}
-                  href={link.href}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-        </section>
-
-        <section className="border-border grid border-b md:grid-cols-[minmax(12rem,0.8fr)_2fr]">
-          <div className={`${cellClassName} border-b md:border-r md:border-b-0`}>
-            <p className={labelClassName}>01 / Work</p>
-          </div>
-          <div className="divide-border divide-y">
-            {work.map((item) => (
-              <article key={`${item.company}-${item.role}`} className="space-y-3 p-2">
-                <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
-                  <h2 className="font-sans text-base font-medium tracking-tight">
-                    {item.role} <span className="text-muted-foreground">— {item.company}</span>
-                  </h2>
-                  <time className="text-muted-foreground shrink-0 text-[11px] tracking-[0.06em] uppercase">
-                    {item.dates}
-                  </time>
-                </div>
-                <p className="text-muted-foreground max-w-2xl font-sans text-sm leading-6">
-                  {item.description}
-                </p>
-              </article>
             ))}
-          </div>
-        </section>
+          </nav>
+        </div>
 
-        <section className="border-border grid border-b md:grid-cols-[minmax(12rem,0.8fr)_2fr]">
-          <div className={`${cellClassName} border-b md:border-r md:border-b-0`}>
-            <p className={labelClassName}>02 / Projects</p>
-          </div>
-          <div className="grid sm:grid-cols-2">
-            {projects.map((project, index) => (
-              <article
-                key={project.name}
-                className={`border-border space-y-4 p-2 ${index < 2 ? "border-b" : "border-b sm:border-b-0"} ${index % 2 === 0 ? "sm:border-r" : ""}`}
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <h2 className="font-sans text-base font-medium tracking-tight">{project.name}</h2>
-                  <span className={labelClassName}>0{index + 1}</span>
-                </div>
-                <p className="text-muted-foreground font-sans text-sm leading-6">
-                  {project.description}
-                </p>
-                <Link
-                  className={`${linkClassName} flex flex-row items-center gap-1 text-xs uppercase`}
-                  href={project.href}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Visit project
-                  <IconArrowUpRight aria-hidden="true" className="size-3.5" />
-                </Link>
-              </article>
-            ))}
-          </div>
-        </section>
+        <footer className="text-muted-foreground space-y-1 text-xs uppercase">
+          <p>© 2026 Francis Ignacio</p>
+          <p>francisdotmd.page</p>
+        </footer>
+      </aside>
 
-        <section className="border-border grid border-b md:grid-cols-[minmax(12rem,0.8fr)_2fr]">
-          <div className={`${cellClassName} border-b md:border-r md:border-b-0`}>
-            <p className={labelClassName}>03 / Toolkit</p>
-          </div>
-          <div className="grid sm:grid-cols-2">
-            {skillGroups.map((group, index) => (
-              <div
-                key={group.label}
-                className={`border-border space-y-3 p-2 ${index < 4 ? "border-b" : ""} ${index % 2 === 0 ? "sm:border-r" : ""}`}
-              >
-                <p className={labelClassName}>{group.label}</p>
-                <p className="text-muted-foreground font-sans text-sm leading-6">{group.items}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <footer className="grid md:grid-cols-[minmax(12rem,0.8fr)_2fr]">
-          <div className={`${cellClassName} border-b md:border-r md:border-b-0`}>
-            <p className={labelClassName}>04 / Contact</p>
-          </div>
-          <div className={`${cellClassName} space-y-6`}>
-            <h2 className="max-w-2xl font-sans text-3xl leading-tight font-medium tracking-[-0.05em] sm:text-5xl">
-              Let&apos;s build something that has to stay up.
-            </h2>
-            <div className="flex flex-wrap gap-x-5 gap-y-2 text-[11px] tracking-[0.08em] uppercase">
-              <Link className={linkClassName} href="mailto:hello@francisdotmd.page">
-                Email me
-                <IconArrowUpRight
-                  aria-hidden="true"
-                  className="ml-1 inline-block size-3.5 align-[-0.15em]"
-                />
+      <main className="lg:ml-80 lg:h-svh lg:overflow-y-auto">
+        <div className="mx-auto max-w-6xl">
+          <nav
+            className="border-border bg-background/95 sticky top-0 z-10 flex items-center justify-between gap-4 border-b p-2 backdrop-blur"
+            aria-label="Page sections"
+          >
+            <div className="flex gap-4 text-xs uppercase">
+              <Link className="text-foreground" href="#projects">
+                All
               </Link>
-              <Link className={linkClassName} href="https://francisdotmd.page">
-                francisdotmd.page
+              <Link className="text-muted-foreground hover:text-foreground" href="#projects">
+                Product
+              </Link>
+              <Link className="text-muted-foreground hover:text-foreground" href="#work">
+                Work
               </Link>
             </div>
-            <p className="text-muted-foreground text-[11px] tracking-[0.08em] uppercase">
-              © 2026 Francis Ignacio
-            </p>
-          </div>
-        </footer>
-      </div>
+            <span className={labelClassName}>Scroll to explore</span>
+          </nav>
+
+          <section id="projects" className="space-y-4 p-2" aria-labelledby="projects-heading">
+            <div className="flex items-baseline justify-between gap-4">
+              <h2
+                id="projects-heading"
+                className="font-sans text-2xl font-medium tracking-[-0.04em]"
+              >
+                Selected work
+              </h2>
+              <p className={labelClassName}>{projects.length} projects</p>
+            </div>
+
+            <div className="grid gap-2 sm:grid-cols-2">
+              {projects.map((project) => (
+                <article key={project.name} className="group">
+                  <Link
+                    className="focus-visible:outline-ring block focus-visible:outline-2 focus-visible:outline-offset-4"
+                    href={project.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <div className="bg-muted aspect-[4/3] overflow-hidden">
+                      <div
+                        className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-[1.02]"
+                        style={{ backgroundImage: `url("${project.image}")` }}
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <div className="flex items-start justify-between gap-4 p-2">
+                      <div>
+                        <h3 className="font-sans text-base font-medium tracking-tight">
+                          {project.name}
+                        </h3>
+                        <p className="text-muted-foreground text-xs uppercase">
+                          {project.type}, {project.dates}
+                        </p>
+                      </div>
+                      <IconArrowUpRight aria-hidden="true" className="size-4 shrink-0" />
+                    </div>
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section
+            id="work"
+            className="border-border space-y-4 border-t p-2"
+            aria-labelledby="work-heading"
+          >
+            <div className="flex items-baseline justify-between gap-4">
+              <h2 id="work-heading" className="font-sans text-2xl font-medium tracking-[-0.04em]">
+                Experience
+              </h2>
+              <p className={labelClassName}>Selected roles</p>
+            </div>
+            <div className="divide-border border-border divide-y border-y">
+              {work.map((item) => (
+                <article key={`${item.company}-${item.role}`} className="space-y-2 p-2">
+                  <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+                    <h3 className="font-sans text-base font-medium tracking-tight">
+                      {item.role} <span className="text-muted-foreground">— {item.company}</span>
+                    </h3>
+                    <time className="text-muted-foreground shrink-0 text-xs uppercase">
+                      {item.dates}
+                    </time>
+                  </div>
+                  <p className="text-muted-foreground max-w-2xl font-sans text-sm leading-6">
+                    {item.description}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section
+            className="border-border space-y-4 border-t p-2"
+            aria-labelledby="toolkit-heading"
+          >
+            <div className="flex items-baseline justify-between gap-4">
+              <h2
+                id="toolkit-heading"
+                className="font-sans text-2xl font-medium tracking-[-0.04em]"
+              >
+                Toolkit
+              </h2>
+              <p className={labelClassName}>How I work</p>
+            </div>
+            <dl className="grid gap-2 sm:grid-cols-2">
+              {skillGroups.map((group) => (
+                <div key={group.label} className="border-border space-y-2 border p-2">
+                  <dt className={labelClassName}>{group.label}</dt>
+                  <dd className="text-muted-foreground font-sans text-sm leading-6">
+                    {group.items}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+
+          <section
+            id="contact"
+            className="border-border space-y-5 border-t p-2"
+            aria-labelledby="contact-heading"
+          >
+            <p className={labelClassName}>Contact</p>
+            <h2
+              id="contact-heading"
+              className="max-w-2xl font-sans text-3xl leading-tight font-medium tracking-[-0.05em] sm:text-5xl"
+            >
+              Let&apos;s build something that has to stay up.
+            </h2>
+            <Link className={linkClassName} href="mailto:hello@francisdotmd.page">
+              hello@francisdotmd.page
+              <IconArrowUpRight
+                aria-hidden="true"
+                className="ml-1 inline-block size-3.5 align-[-0.15em]"
+              />
+            </Link>
+          </section>
+        </div>
+      </main>
     </div>
   )
 }
