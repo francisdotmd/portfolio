@@ -102,8 +102,14 @@ export default function HomePage() {
       <aside className="border-border bg-background flex flex-col justify-between gap-10 border-b p-2 lg:fixed lg:inset-y-0 lg:left-[max(0px,calc((100vw-72rem)/2))] lg:w-80 lg:overflow-hidden lg:border-r lg:border-b-0">
         <div className="space-y-10">
           <header className="space-y-4">
-            <div className="flex items-center gap-2">
-              <span className="bg-foreground size-2" aria-hidden="true" />
+            <div className="flex items-center gap-3">
+              <img
+                src="https://avatars.githubusercontent.com/u/239557641?v=4"
+                alt="Francis Ignacio"
+                width="32"
+                height="32"
+                className="size-8 rounded-full object-cover"
+              />
               <p className={labelClassName}>Francis Ignacio</p>
             </div>
             <p className="text-muted-foreground max-w-xs font-sans text-sm leading-6">
@@ -136,16 +142,16 @@ export default function HomePage() {
         <div className="space-y-4">
           <dl className="border-border border-t text-xs uppercase">
             <div className="border-border flex justify-between gap-4 border-b p-2">
-              <dt className="text-muted-foreground">Timezone</dt>
-              <dd>PHT</dd>
+              <dt className="text-muted-foreground">Area, TZ</dt>
+              <dd>Philippines, PHT</dd>
             </div>
             <div className="border-border flex justify-between gap-4 border-b p-2">
-              <dt className="text-muted-foreground">Area</dt>
-              <dd>Philippines</dd>
-            </div>
-            <div className="border-border flex justify-between gap-4 border-b p-2">
-              <dt className="text-muted-foreground">Domain</dt>
-              <dd>francisdotmd.page</dd>
+              <dt className="text-muted-foreground">Website</dt>
+              <dd>
+                <Link className="hover:text-foreground" href="https://francisdotmd.page">
+                  francisdotmd.page
+                </Link>
+              </dd>
             </div>
           </dl>
           <footer className="text-muted-foreground text-xs uppercase">
