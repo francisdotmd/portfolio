@@ -124,7 +124,7 @@ export default function HomePage() {
             </div>
           </dl>
           <div className="border-border flex items-center justify-between gap-4 border-b p-2">
-            <p className={labelClassName}>Contacts</p>
+            <p className="text-muted-foreground text-xs uppercase">Contacts</p>
             <nav className="flex items-center gap-4" aria-label="Profile links">
               {links.map((link) => {
                 const Icon = link.icon
