@@ -42,3 +42,5 @@ export const works = [
     dates: "2024 — Present",
   },
 ]
+
+export type Work = (typeof works)[number]
