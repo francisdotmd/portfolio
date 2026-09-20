@@ -1,13 +1,13 @@
 "use client"
 
-import Link from "next/link"
-import { useQueryParams } from "@/hooks/use-query-params"
 import { socials } from "@/data/socials"
 import { works } from "@/data/works"
+import { useQueryParams } from "@/hooks/use-query-params"
 import { Avatar } from "@packages/ui-w/shared/avatar/avatar"
 import { AvatarFallback } from "@packages/ui-w/shared/avatar/avatar-fallback"
 import { AvatarImage } from "@packages/ui-w/shared/avatar/avatar-image"
 import { IconArrowUpRight, IconDownload, IconMail } from "@tabler/icons-react"
+import Link from "next/link"
 
 const experience = [
   {
