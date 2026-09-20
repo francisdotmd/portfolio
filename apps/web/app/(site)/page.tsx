@@ -157,7 +157,7 @@ export default function HomePage() {
       </aside>
 
       <main className="lg:ml-80 lg:h-svh lg:overflow-y-auto">
-        <div className="mx-auto max-w-6xl">
+        <div className="w-full">
           <nav
             className="border-border bg-background/95 sticky top-0 z-10 flex items-center justify-between gap-4 border-b p-2 backdrop-blur"
             aria-label="Page sections"
