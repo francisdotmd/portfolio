@@ -16,7 +16,6 @@
     "@packages/ui-w": "workspace:*",
     "@tabler/icons-react": "^3.46.0",
     "@tanstack/react-query": "5.102.8",
-    "@thesvg/react": "^3.3.8",
     "@vinext/cloudflare": "1.0.0-beta.7",
     "react": "19.3.0",
     "react-dom": "19.3.0",
