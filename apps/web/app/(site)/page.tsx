@@ -5,13 +5,8 @@ import Link from "next/link"
 import { Avatar } from "@packages/ui-w/shared/avatar/avatar"
 import { AvatarFallback } from "@packages/ui-w/shared/avatar/avatar-fallback"
 import { AvatarImage } from "@packages/ui-w/shared/avatar/avatar-image"
-import {
-  IconArrowUpRight,
-  IconBrandGithub,
-  IconBrandLinkedin,
-  IconFileCv,
-  IconMail,
-} from "@tabler/icons-react"
+import { Github, Linkedin } from "@thesvg/react"
+import { IconArrowUpRight, IconDownload, IconMail } from "@tabler/icons-react"
 
 const work = [
   {
@@ -80,18 +75,16 @@ const links = [
     href: "mailto:hello@francisdotmd.page",
     icon: IconMail,
   },
-  {
-    label: "Résumé",
-    href: "https://drive.google.com/file/d/1-gi0nNzPXp_zLeoTXQ8_hSVVpJJkrhAk/view?usp=sharing",
-    icon: IconFileCv,
-  },
-  { label: "GitHub", href: "https://github.com/francistriesscience", icon: IconBrandGithub },
+  { label: "GitHub", href: "https://github.com/francistriesscience", icon: Github },
   {
     label: "LinkedIn",
     href: "https://linkedin.com/in/francistriesscience",
-    icon: IconBrandLinkedin,
+    icon: Linkedin,
   },
 ]
+
+const resumeHref =
+  "https://drive.google.com/file/d/1-gi0nNzPXp_zLeoTXQ8_hSVVpJJkrhAk/view?usp=sharing"
 
 const labelClassName = "font-mono text-sm uppercase tracking-[0.08em] text-muted-foreground"
 const linkClassName =
@@ -153,6 +146,20 @@ export default function HomePage() {
               <dd>
                 <Link className="hover:text-foreground" href="https://francisdotmd.page">
                   francisdotmd.page
+                </Link>
+              </dd>
+            </div>
+            <div className="border-border flex justify-between gap-4 border-b p-2">
+              <dt className="text-muted-foreground">Paper</dt>
+              <dd>
+                <Link
+                  className="hover:text-foreground flex items-center gap-1"
+                  href={resumeHref}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Resume
+                  <IconDownload aria-hidden="true" className="size-3.5" />
                 </Link>
               </dd>
             </div>
