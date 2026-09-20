@@ -1,5 +1,6 @@
 "use client"
 
+import { HomeTabs } from "@/components/pages/home/_tabs/home-tabs"
 import { Footer } from "@/components/pages/home/_section/footer"
 import { Information } from "@/components/pages/home/_section/information"
 import { Introduction } from "@/components/pages/home/_section/introduction"
@@ -28,30 +29,15 @@ export default function HomePage() {
       <main className="min-w-0">
         <div className="w-full">
           <nav
-            className="border-border bg-background/95 sticky top-0 z-10 flex items-center gap-4 border-b p-2 backdrop-blur"
+            className="border-border bg-background/95 sticky top-0 z-10 border-b p-2 backdrop-blur"
             aria-label="Portfolio views"
-            role="tablist"
           >
-            <button
-              className={`text-xs uppercase ${activeTab === "work" ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
-              type="button"
-              role="tab"
-              aria-selected={activeTab === "work"}
-              aria-controls="works-panel"
-              onClick={() => setQueryParams({ tab: "work" })}
-            >
-              Work
-            </button>
-            <button
-              className={`text-xs uppercase ${activeTab === "experience" ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
-              type="button"
-              role="tab"
-              aria-selected={activeTab === "experience"}
-              aria-controls="experience-panel"
-              onClick={() => setQueryParams({ tab: "experience" })}
-            >
-              Experience
-            </button>
+            <HomeTabs
+              value={activeTab}
+              onValueChange={(value) =>
+                setQueryParams({ tab: value === "experience" ? "experience" : "work" })
+              }
+            />
           </nav>
 
           {activeTab === "work" ? (
