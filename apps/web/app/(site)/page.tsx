@@ -94,7 +94,7 @@ export default function HomePage() {
           </header>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-2">
           <dl className="border-border border-t text-xs uppercase">
             <div className="border-border flex justify-between gap-4 border-b p-2">
               <dt className="text-muted-foreground">Area, TZ</dt>
@@ -118,33 +118,35 @@ export default function HomePage() {
                   rel="noreferrer"
                 >
                   Resume
-                  <IconDownload aria-hidden="true" className="size-3.5" />
+                  <IconDownload aria-hidden="true" className="size-4" />
                 </Link>
               </dd>
             </div>
-          </dl>
-          <div className="border-border flex items-center justify-between gap-4 border-b p-2">
-            <p className="text-muted-foreground text-xs uppercase">Contacts</p>
-            <nav className="flex items-center gap-4" aria-label="Profile links">
-              {links.map((link) => {
-                const Icon = link.icon
+            <div className="border-border flex items-center justify-between gap-4 border-b p-2">
+              <dt className="text-muted-foreground">Contacts</dt>
+              <dd className="m-0">
+                <nav className="flex items-center gap-4" aria-label="Profile links">
+                  {links.map((link) => {
+                    const Icon = link.icon
 
-                return (
-                  <Link
-                    key={link.label}
-                    className="text-muted-foreground hover:text-foreground focus-visible:outline-ring focus-visible:outline-2 focus-visible:outline-offset-4"
-                    href={link.href}
-                    aria-label={link.label}
-                    title={link.label}
-                    target={link.href.startsWith("http") ? "_blank" : undefined}
-                    rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                  >
-                    <Icon className="size-4" aria-hidden="true" />
-                  </Link>
-                )
-              })}
-            </nav>
-          </div>
+                    return (
+                      <Link
+                        key={link.label}
+                        className="text-muted-foreground hover:text-foreground focus-visible:outline-ring focus-visible:outline-2 focus-visible:outline-offset-4"
+                        href={link.href}
+                        aria-label={link.label}
+                        title={link.label}
+                        target={link.href.startsWith("http") ? "_blank" : undefined}
+                        rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                      >
+                        <Icon className="size-4" aria-hidden="true" />
+                      </Link>
+                    )
+                  })}
+                </nav>
+              </dd>
+            </div>
+          </dl>
           <footer className="text-muted-foreground px-2 text-xs uppercase">
             <p>© 2026 Francis Ignacio — Selected work</p>
           </footer>
