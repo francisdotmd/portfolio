@@ -6,14 +6,11 @@ import { useQueryParams } from "@/hooks/use-query-params"
 import { Avatar } from "@packages/ui-w/shared/avatar/avatar"
 import { AvatarFallback } from "@packages/ui-w/shared/avatar/avatar-fallback"
 import { AvatarImage } from "@packages/ui-w/shared/avatar/avatar-image"
-import {
-  IconArrowUpRight,
-  IconBasketSearch,
-  IconCubeUnfolded,
-  IconDownload,
-  IconMail,
-} from "@tabler/icons-react"
+import { IconArrowUpRight, IconDownload, IconMail } from "@tabler/icons-react"
 import Link from "next/link"
+import { Tooltip } from "@packages/ui-w/shared/tooltip/tooltip"
+import { TooltipPopup } from "@packages/ui-w/shared/tooltip/tooltip-popup"
+import { TooltipTrigger } from "@packages/ui-w/shared/tooltip/tooltip-trigger"
 
 const experience = [
   {
@@ -74,15 +71,39 @@ export default function HomePage() {
             <p className="text-muted-foreground max-w-xs font-sans text-sm leading-6">
               Product engineer and startup co-founder turning ambitious ideas into useful software,
               with a focus on applied AI and reliable systems. I’m currently building{" "}
-              <span className="inline-flex items-center gap-1 align-middle whitespace-nowrap">
-                <IconBasketSearch aria-hidden="true" className="size-4" />
-                Pantrack
-              </span>{" "}
+              <Tooltip>
+                <TooltipTrigger
+                  render={
+                    <span
+                      aria-label="Pantrack status"
+                      className="text-foreground decoration-border cursor-help underline underline-offset-4"
+                      tabIndex={0}
+                    >
+                      Pantrack
+                    </span>
+                  }
+                />
+                <TooltipPopup side="top" align="center">
+                  in development
+                </TooltipPopup>
+              </Tooltip>{" "}
               and{" "}
-              <span className="inline-flex items-center gap-1 align-middle whitespace-nowrap">
-                <IconCubeUnfolded aria-hidden="true" className="size-4" />
-                Pleo
-              </span>{" "}
+              <Tooltip>
+                <TooltipTrigger
+                  render={
+                    <span
+                      aria-label="Pleo status"
+                      className="text-foreground decoration-border cursor-help underline underline-offset-4"
+                      tabIndex={0}
+                    >
+                      Pleo
+                    </span>
+                  }
+                />
+                <TooltipPopup side="top" align="center">
+                  in development
+                </TooltipPopup>
+              </Tooltip>{" "}
               at Mnemora.
             </p>
           </header>
