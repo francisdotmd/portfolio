@@ -114,7 +114,8 @@ export default function HomePage() {
                     return (
                       <Link
                         key={link.label}
-                        className="text-muted-foreground hover:text-foreground focus-visible:outline-ring focus-visible:outline-2 focus-visible:outline-offset-4"
+                        className="focus-visible:outline-ring transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4"
+                        style={{ color: link.color }}
                         href={link.href}
                         aria-label={link.label}
                         title={link.label}
