@@ -1,13 +1,15 @@
+import Link from "next/link"
+
 export function HomeTabs() {
   return (
-    <button
+    <Link
       className="text-foreground flex h-8 w-full items-center p-2 text-left text-xs uppercase"
-      type="button"
+      href="/?tab=works"
       role="tab"
       aria-selected={true}
       aria-controls="works-panel"
     >
       Works
-    </button>
+    </Link>
   )
 }
