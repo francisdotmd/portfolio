@@ -12,7 +12,7 @@ export function Introduction() {
           Francis Ignacio
         </Link>
       </div>
-      <p className="text-muted-foreground font-sans text-sm leading-6">
+      <p className="text-muted-foreground font-sans text-sm leading-5">
         Product engineer and startup co-founder turning ambitious ideas into useful software, with a
         focus on applied AI and reliable systems.
       </p>
