@@ -3,6 +3,7 @@ name: Deploy Web to Cloudflare
 on:
   push:
     branches:
+      - development
       - main
     paths:
       - "apps/web/**"
