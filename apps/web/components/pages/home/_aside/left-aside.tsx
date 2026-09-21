@@ -9,7 +9,7 @@ export function LeftAside() {
         <Introduction />
       </div>
 
-      <div className="space-y-2">
+      <div>
         <Information />
         <div className="hidden lg:block">
           <Footer />

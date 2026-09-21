@@ -2,8 +2,8 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="text-muted-foreground px-2 text-xs uppercase">
-      <p>
+    <footer className="border-border text-muted-foreground flex items-center border-b p-2 text-xs uppercase">
+      <p className="m-0">
         © 2026 Francis Ignacio +{" "}
         <Link
           className="hover:text-foreground"
