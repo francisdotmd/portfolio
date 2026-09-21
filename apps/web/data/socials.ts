@@ -3,15 +3,13 @@ import { IconBrandGithub, IconBrandLinkedin, IconBrandX } from "@tabler/icons-re
 export const socials = [
   {
     label: "GitHub",
-    href: "https://github.com/francistriesscience",
+    href: "https://github.com/francisdotmd",
     icon: IconBrandGithub,
-    color: "#101411",
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/francistriesscience",
+    href: "https://linkedin.com/in/francisdotmd",
     icon: IconBrandLinkedin,
-    color: "#0a66c2",
   },
-  { label: "X", href: "https://x.com/francisdotmd", icon: IconBrandX, color: "#1D9BF0" },
+  { label: "X", href: "https://x.com/francisdotmd", icon: IconBrandX },
 ]
