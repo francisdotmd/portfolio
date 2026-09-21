@@ -4,8 +4,8 @@ import { Introduction } from "@/components/pages/home/_section/introduction"
 
 export function LeftAside() {
   return (
-    <aside className="border-border bg-background flex flex-col justify-between gap-10 border-b p-0 lg:sticky lg:top-0 lg:h-svh lg:self-start lg:overflow-hidden lg:border-r lg:border-b-0 lg:p-2">
-      <div className="space-y-10 p-2 lg:p-0">
+    <aside className="border-border bg-background flex flex-col justify-between gap-10 p-0 lg:sticky lg:top-0 lg:h-svh lg:self-start lg:overflow-hidden lg:border-r">
+      <div className="space-y-10 p-2">
         <Introduction />
       </div>
 
