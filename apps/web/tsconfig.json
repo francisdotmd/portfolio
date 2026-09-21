@@ -8,9 +8,9 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@packages/ui/*": ["../../packages/ui/*"]
+      "@packages/ui-w/*": ["../../packages/ui-w/*"]
     },
-    "types": ["./cloudflare-env.d.ts", "node"]
+    "types": ["./worker-configuration.d.ts", "node"]
   },
   "include": [
     "next-env.d.ts",

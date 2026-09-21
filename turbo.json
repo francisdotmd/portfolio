@@ -1,12 +1,18 @@
 {
   "$schema": "https://turborepo.dev/schema.json",
   "ui": "tui",
-  "globalPassThroughEnv": ["CLOUDFLARE_API_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "NEXT_PUBLIC_API_URL", "GITHUB_TOKEN", "GITHUB_USERNAME"],
+  "globalPassThroughEnv": [
+    "CLOUDFLARE_API_TOKEN",
+    "CLOUDFLARE_ACCOUNT_ID",
+    "NEXT_PUBLIC_API_URL_V1",
+    "NEXT_PUBLIC_DEBUG",
+    "NEXT_PUBLIC_ENVIRONMENT"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**", "!.next/dev/**", "target/**"]
     },
     "lint": {
       "dependsOn": ["^lint"]
@@ -14,34 +20,12 @@
     "check-types": {
       "dependsOn": ["^check-types"]
     },
-    "build:cloudflare": {
-      "dependsOn": ["build"],
-      "outputs": [".open-next/**"]
-    },
-    "preview:cloudflare": {
-      "cache": false,
-      "persistent": true
-    },
-    "deploy:cloudflare": {
-      "dependsOn": ["build:cloudflare"],
-      "cache": false
-    },
-    "typegen:cloudflare": {
-      "outputs": ["cloudflare-env.d.ts"]
-    },
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "env": ["PORT", "ENVIRONMENT", "DEBUG"]
     },
-    "worker": {
-      "cache": false,
-      "persistent": true
-    },
-    "worker:watch": {
-      "cache": false,
-      "persistent": true
-    },
-    "dev:docker:build": {
+    "deploy:cloudflare": {
       "cache": false
     }
   }
