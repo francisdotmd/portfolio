@@ -25,7 +25,7 @@ export function Information() {
         </dd>
       </div>
       <div className="border-border flex justify-between gap-4 border-b p-2">
-        <dt className="text-muted-foreground">Paper</dt>
+        <dt className="text-muted-foreground">Resume</dt>
         <dd>
           <Link
             className="hover:text-foreground flex items-center gap-1"
@@ -33,7 +33,7 @@ export function Information() {
             target="_blank"
             rel="noreferrer"
           >
-            Resume
+            FRANCISIGNACIO_CV.PDF
             <IconDownload aria-hidden="true" className="size-4" />
           </Link>
         </dd>
