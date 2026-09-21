@@ -1,4 +1,5 @@
 import { Footer } from "@/components/pages/home/_section/footer"
+
 import { Information } from "@/components/pages/home/_section/information"
 import { Introduction } from "@/components/pages/home/_section/introduction"
 
