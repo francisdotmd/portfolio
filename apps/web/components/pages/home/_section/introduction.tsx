@@ -9,7 +9,7 @@ export function Introduction() {
         <ProfileAvatar />
         <p className={labelClassName}>Francis Ignacio</p>
       </div>
-      <p className="text-muted-foreground max-w-xs font-sans text-sm leading-6">
+      <p className="text-muted-foreground font-sans text-sm leading-6">
         Product engineer and startup co-founder turning ambitious ideas into useful software, with a
         focus on applied AI and reliable systems.
       </p>
