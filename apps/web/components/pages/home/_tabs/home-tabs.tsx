@@ -7,7 +7,7 @@ export function HomeTabs() {
       aria-selected={true}
       aria-controls="works-panel"
     >
-      Work
+      Works
     </button>
   )
 }

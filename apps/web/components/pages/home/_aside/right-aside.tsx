@@ -16,7 +16,7 @@ export function RightAside() {
 
         <section id="works-panel" className="p-2" aria-labelledby="works-heading">
           <h1 id="works-heading" className="sr-only">
-            Work
+            Works
           </h1>
           <div className="grid gap-2 sm:grid-cols-2">
             {works.map((project) => (
