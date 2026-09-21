@@ -1,10 +1,12 @@
 "use client"
 
-import { WorkCard } from "@/components/pages/home/_card/work-card"
-import { HomeTabs } from "@/components/pages/home/_tabs/home-tabs"
+import { useQueryParams } from "@/hooks/use-query-params"
+
 import { experiences } from "@/data/experiences"
 import { works } from "@/data/works"
-import { useQueryParams } from "@/hooks/use-query-params"
+
+import { WorkCard } from "@/components/pages/home/_card/work-card"
+import { HomeTabs } from "@/components/pages/home/_tabs/home-tabs"
 
 export function RightAside() {
   const { getQueryParam, setQueryParams } = useQueryParams()
