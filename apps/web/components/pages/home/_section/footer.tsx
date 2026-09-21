@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="text-muted-foreground px-2 text-center text-xs uppercase lg:text-left">
+    <footer className="text-muted-foreground px-2 text-xs uppercase">
       <p>
         © 2026 Francis Ignacio +{" "}
         <Link
