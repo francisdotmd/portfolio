@@ -7,7 +7,7 @@ const resumeHref =
 
 export function Information() {
   return (
-    <dl className="border-border border-t text-xs uppercase">
+    <dl className="border-border m-0 border-t text-xs uppercase">
       <div className="border-border flex justify-between gap-4 border-b p-2">
         <dt className="text-muted-foreground">Area, TZ</dt>
         <dd>Philippines, PHT</dd>
