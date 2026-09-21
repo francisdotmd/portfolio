@@ -1,4 +1,4 @@
-type Tab = "work" | "experience"
+type Tab = "work" | "about"
 
 type HomeTabsProps = {
   value: Tab
@@ -19,14 +19,14 @@ export function HomeTabs({ value, onValueChangeAction }: HomeTabsProps) {
         Work
       </button>
       <button
-        className={`text-xs uppercase ${value === "experience" ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+        className={`text-xs uppercase ${value === "about" ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
         type="button"
         role="tab"
-        aria-selected={value === "experience"}
-        aria-controls="experience-panel"
-        onClick={() => onValueChangeAction("experience")}
+        aria-selected={value === "about"}
+        aria-controls="about-panel"
+        onClick={() => onValueChangeAction("about")}
       >
-        Experience
+        About
       </button>
     </>
   )
