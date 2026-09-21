@@ -1,6 +1,6 @@
-import { Footer } from "@/components/pages/home/_section/footer"
-import { Information } from "@/components/pages/home/_section/information"
-import { Introduction } from "@/components/pages/home/_section/introduction"
+import { Footer } from "@/components/pages/home/_section/footer-section"
+import { Information } from "@/components/pages/home/_section/information-section"
+import { Introduction } from "@/components/pages/home/_section/introduction-section"
 
 export function LeftAside() {
   return (

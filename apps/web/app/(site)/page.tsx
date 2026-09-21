@@ -1,6 +1,6 @@
 import { LeftAside } from "@/components/pages/home/_aside/left-aside"
 import { RightAside } from "@/components/pages/home/_aside/right-aside"
-import { Footer } from "@/components/pages/home/_section/footer"
+import { Footer } from "@/components/pages/home/_section/footer-section"
 
 export default function HomePage() {
   return (
