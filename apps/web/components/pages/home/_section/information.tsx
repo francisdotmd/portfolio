@@ -48,8 +48,7 @@ export function Information() {
               return (
                 <Link
                   key={link.label}
-                  className="focus-visible:outline-ring transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4"
-                  style={{ color: link.color }}
+                  className="text-foreground focus-visible:outline-ring transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4"
                   href={link.href}
                   aria-label={link.label}
                   title={link.label}
