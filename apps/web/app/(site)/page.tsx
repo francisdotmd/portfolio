@@ -7,7 +7,7 @@ export default function HomePage() {
     <div className="bg-background text-foreground min-h-svh font-mono lg:grid lg:grid-cols-[20rem_minmax(0,1fr)]">
       <LeftAside />
       <RightAside />
-      <footer className="text-muted-foreground p-2 text-xs uppercase lg:hidden">
+      <footer className="text-muted-foreground p-2 text-center text-xs uppercase lg:hidden">
         <p>
           © 2026 Francis Ignacio +{" "}
           <Link
