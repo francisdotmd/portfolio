@@ -7,7 +7,7 @@ export function RightAside() {
     <main className="min-w-0">
       <div className="w-full">
         <nav
-          className="border-border bg-background/95 sticky top-0 z-10 flex items-center border-b p-0 backdrop-blur"
+          className="border-border bg-background/80 sticky top-0 z-10 flex items-center border-b p-0 backdrop-blur-md"
           aria-label="Portfolio views"
           role="tablist"
         >
