@@ -8,7 +8,6 @@ This repository is public for transparency and reference. It contains one person
 
 The root README is intentionally brief. Technical documentation lives in [`.docs/`](.docs/):
 
-- [Documentation index](.docs/README.md)
 - [Development](.docs/development.md)
 - [Deployment](.docs/deployment.md)
 
