@@ -1,4 +1,5 @@
 import type { Work } from "@/data/works"
+import Image from "next/image"
 import { IconArrowUpRight } from "@tabler/icons-react"
 import Link from "next/link"
 
@@ -12,10 +13,15 @@ export function WorkCard({ project }: { project: Work }) {
         rel="noreferrer"
       >
         <div className="bg-muted aspect-video overflow-hidden">
-          <div
-            className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-[1.02]"
-            style={{ backgroundImage: `url("${project.image}")` }}
-            aria-hidden="true"
+          <Image
+            src={project.image}
+            alt=""
+            width={1920}
+            height={1080}
+            loading="lazy"
+            decoding="async"
+            sizes="(min-width: 1024px) calc(50vw - 10rem), (min-width: 640px) 50vw, 100vw"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
           />
         </div>
         <div className="flex items-start justify-between gap-4 p-2">
